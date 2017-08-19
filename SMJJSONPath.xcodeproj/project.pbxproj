@@ -1,0 +1,1015 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E816863C1F40F1BA00B38278 /* SMJInlineFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E816863B1F40F1BA00B38278 /* SMJInlineFilterTest.m */; };
+		E81686411F41277B00B38278 /* SMJRegexpEvaluatorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E81686401F41277B00B38278 /* SMJRegexpEvaluatorTest.m */; };
+		E82104D81F41ED4A0001359C /* SMJIssue234.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104D71F41ED4A0001359C /* SMJIssue234.m */; };
+		E82104DA1F4202E50001359C /* SMJBaseFunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104D91F4202E50001359C /* SMJBaseFunctionTest.m */; };
+		E82104DD1F4255960001359C /* SMJJSONEntityPathFunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104DC1F4255960001359C /* SMJJSONEntityPathFunctionTest.m */; };
+		E82104DF1F425BFD0001359C /* SMJNestedFunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104DE1F425BFD0001359C /* SMJNestedFunctionTest.m */; };
+		E82104E11F4265510001359C /* SMJNumericPathFunctionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104E01F4265510001359C /* SMJNumericPathFunctionTest.m */; };
+		E82104E61F426C6C0001359C /* SMJPathTokenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104E51F426C6C0001359C /* SMJPathTokenTest.m */; };
+		E82104EA1F4275CD0001359C /* SMJMultiPropTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104E91F4275CD0001359C /* SMJMultiPropTest.m */; };
+		E82104EC1F427D9F0001359C /* SMJOptionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E82104EB1F427D9F0001359C /* SMJOptionsTest.m */; };
+		E8220EA11F43ACDF00E7D00C /* SMJArraySlicingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8220E9F1F43ACDF00E7D00C /* SMJArraySlicingTest.m */; };
+		E8220EA21F43ACDF00E7D00C /* SMJComplianceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8220EA01F43ACDF00E7D00C /* SMJComplianceTest.m */; };
+		E8850C6E1F44CAD800E4FB36 /* SMJIssue191.m in Sources */ = {isa = PBXBuildFile; fileRef = E8850C6D1F44CAD800E4FB36 /* SMJIssue191.m */; };
+		E8850C701F44CB5400E4FB36 /* issue_191.json in Resources */ = {isa = PBXBuildFile; fileRef = E8850C6F1F44CB4D00E4FB36 /* issue_191.json */; };
+		E8873F521F44331D008475D3 /* SMJScanPathTokenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8873F511F44331D008475D3 /* SMJScanPathTokenTest.m */; };
+		E8873F541F4437E9008475D3 /* SMJIssuesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8873F531F4437E9008475D3 /* SMJIssuesTest.m */; };
+		E8873F561F443FAC008475D3 /* issue_24.json in Resources */ = {isa = PBXBuildFile; fileRef = E8873F551F443EDC008475D3 /* issue_24.json */; };
+		E8A2891B1F4339A600D8FFA1 /* SMJPathCompilerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2891A1F4339A600D8FFA1 /* SMJPathCompilerTest.m */; };
+		E8A2891D1F435DC600D8FFA1 /* SMJReturnTypeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2891C1F435DC600D8FFA1 /* SMJReturnTypeTest.m */; };
+		E8A2891F1F43600000D8FFA1 /* SMJWriteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A2891E1F43600000D8FFA1 /* SMJWriteTest.m */; };
+		E8A289211F43757500D8FFA1 /* json_array_multiple_delete.json in Resources */ = {isa = PBXBuildFile; fileRef = E8A289201F43752600D8FFA1 /* json_array_multiple_delete.json */; };
+		E8A289281F43ABB100D8FFA1 /* SMJArrayIndexFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A289271F43ABB100D8FFA1 /* SMJArrayIndexFilterTest.m */; };
+		E8A301561F3E44FD0025FE8E /* SMJBaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A301551F3E44FD0025FE8E /* SMJBaseTest.m */; };
+		E8A301591F3E7E210025FE8E /* SMJEvaluationListenerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A301581F3E7E210025FE8E /* SMJEvaluationListenerTest.m */; };
+		E8D2854B1F3A29B000B38EE3 /* SMJDeepScanTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2854A1F3A29B000B38EE3 /* SMJDeepScanTest.m */; };
+		E8D2854D1F3A29B000B38EE3 /* SMJJSONPath.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2853F1F3A29B000B38EE3 /* SMJJSONPath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8D2855F1F3A2A2A00B38EE3 /* SMJConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285571F3A2A2A00B38EE3 /* SMJConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8D285601F3A2A2A00B38EE3 /* SMJConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285581F3A2A2A00B38EE3 /* SMJConfiguration.m */; };
+		E8D285611F3A2A2A00B38EE3 /* SMJConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285581F3A2A2A00B38EE3 /* SMJConfiguration.m */; };
+		E8D285621F3A2A2A00B38EE3 /* SMJEvaluationListener.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285591F3A2A2A00B38EE3 /* SMJEvaluationListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8D285641F3A2A2A00B38EE3 /* SMJJSONPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2855B1F3A2A2A00B38EE3 /* SMJJSONPath.m */; };
+		E8D285651F3A2A2A00B38EE3 /* SMJJSONPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2855B1F3A2A2A00B38EE3 /* SMJJSONPath.m */; };
+		E8D285661F3A2A2A00B38EE3 /* SMJOption.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2855C1F3A2A2A00B38EE3 /* SMJOption.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8D285671F3A2A2A00B38EE3 /* SMJPathFunctionFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2855D1F3A2A2A00B38EE3 /* SMJPathFunctionFactory.h */; };
+		E8D285681F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2855E1F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m */; };
+		E8D285691F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2855E1F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m */; };
+		E8D285A71F3A2AA900B38EE3 /* SMJArrayIndexOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2856B1F3A2AA900B38EE3 /* SMJArrayIndexOperation.h */; };
+		E8D285A81F3A2AA900B38EE3 /* SMJArrayIndexOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2856C1F3A2AA900B38EE3 /* SMJArrayIndexOperation.m */; };
+		E8D285A91F3A2AA900B38EE3 /* SMJArrayIndexOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2856C1F3A2AA900B38EE3 /* SMJArrayIndexOperation.m */; };
+		E8D285AA1F3A2AA900B38EE3 /* SMJArrayPathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2856D1F3A2AA900B38EE3 /* SMJArrayPathToken.h */; };
+		E8D285AB1F3A2AA900B38EE3 /* SMJArrayPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2856E1F3A2AA900B38EE3 /* SMJArrayPathToken.m */; };
+		E8D285AC1F3A2AA900B38EE3 /* SMJArrayPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2856E1F3A2AA900B38EE3 /* SMJArrayPathToken.m */; };
+		E8D285AD1F3A2AA900B38EE3 /* SMJArraySliceOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2856F1F3A2AA900B38EE3 /* SMJArraySliceOperation.h */; };
+		E8D285AE1F3A2AA900B38EE3 /* SMJArraySliceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285701F3A2AA900B38EE3 /* SMJArraySliceOperation.m */; };
+		E8D285AF1F3A2AA900B38EE3 /* SMJArraySliceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285701F3A2AA900B38EE3 /* SMJArraySliceOperation.m */; };
+		E8D285B01F3A2AA900B38EE3 /* SMJCharacterIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285711F3A2AA900B38EE3 /* SMJCharacterIndex.h */; };
+		E8D285B11F3A2AA900B38EE3 /* SMJCharacterIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285721F3A2AA900B38EE3 /* SMJCharacterIndex.m */; };
+		E8D285B21F3A2AA900B38EE3 /* SMJCharacterIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285721F3A2AA900B38EE3 /* SMJCharacterIndex.m */; };
+		E8D285B31F3A2AA900B38EE3 /* SMJCompiledPath.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285731F3A2AA900B38EE3 /* SMJCompiledPath.h */; };
+		E8D285B41F3A2AA900B38EE3 /* SMJCompiledPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285741F3A2AA900B38EE3 /* SMJCompiledPath.m */; };
+		E8D285B51F3A2AA900B38EE3 /* SMJCompiledPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285741F3A2AA900B38EE3 /* SMJCompiledPath.m */; };
+		E8D285B61F3A2AA900B38EE3 /* SMJEvaluationContext.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285751F3A2AA900B38EE3 /* SMJEvaluationContext.h */; };
+		E8D285B71F3A2AA900B38EE3 /* SMJEvaluationContextImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285761F3A2AA900B38EE3 /* SMJEvaluationContextImpl.h */; };
+		E8D285B81F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285771F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m */; };
+		E8D285B91F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285771F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m */; };
+		E8D285BA1F3A2AA900B38EE3 /* SMJEvaluator.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285781F3A2AA900B38EE3 /* SMJEvaluator.h */; };
+		E8D285BB1F3A2AA900B38EE3 /* SMJEvaluatorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285791F3A2AA900B38EE3 /* SMJEvaluatorFactory.h */; };
+		E8D285BC1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2857A1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m */; };
+		E8D285BD1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2857A1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m */; };
+		E8D285BE1F3A2AA900B38EE3 /* SMJExpressionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2857B1F3A2AA900B38EE3 /* SMJExpressionNode.h */; };
+		E8D285BF1F3A2AA900B38EE3 /* SMJExpressionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2857C1F3A2AA900B38EE3 /* SMJExpressionNode.m */; };
+		E8D285C01F3A2AA900B38EE3 /* SMJExpressionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2857C1F3A2AA900B38EE3 /* SMJExpressionNode.m */; };
+		E8D285C11F3A2AA900B38EE3 /* SMJFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2857D1F3A2AA900B38EE3 /* SMJFilter.h */; };
+		E8D285C21F3A2AA900B38EE3 /* SMJFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2857E1F3A2AA900B38EE3 /* SMJFilter.m */; };
+		E8D285C31F3A2AA900B38EE3 /* SMJFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2857E1F3A2AA900B38EE3 /* SMJFilter.m */; };
+		E8D285C41F3A2AA900B38EE3 /* SMJFilterCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2857F1F3A2AA900B38EE3 /* SMJFilterCompiler.h */; };
+		E8D285C51F3A2AA900B38EE3 /* SMJFilterCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285801F3A2AA900B38EE3 /* SMJFilterCompiler.m */; };
+		E8D285C61F3A2AA900B38EE3 /* SMJFilterCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285801F3A2AA900B38EE3 /* SMJFilterCompiler.m */; };
+		E8D285C71F3A2AA900B38EE3 /* SMJFunctionPathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285811F3A2AA900B38EE3 /* SMJFunctionPathToken.h */; };
+		E8D285C81F3A2AA900B38EE3 /* SMJFunctionPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285821F3A2AA900B38EE3 /* SMJFunctionPathToken.m */; };
+		E8D285C91F3A2AA900B38EE3 /* SMJFunctionPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285821F3A2AA900B38EE3 /* SMJFunctionPathToken.m */; };
+		E8D285CA1F3A2AA900B38EE3 /* SMJLogicalExpressionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285831F3A2AA900B38EE3 /* SMJLogicalExpressionNode.h */; };
+		E8D285CB1F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285841F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m */; };
+		E8D285CC1F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285841F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m */; };
+		E8D285CD1F3A2AA900B38EE3 /* SMJLogicalOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285851F3A2AA900B38EE3 /* SMJLogicalOperator.h */; };
+		E8D285CE1F3A2AA900B38EE3 /* SMJLogicalOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285861F3A2AA900B38EE3 /* SMJLogicalOperator.m */; };
+		E8D285CF1F3A2AA900B38EE3 /* SMJLogicalOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285861F3A2AA900B38EE3 /* SMJLogicalOperator.m */; };
+		E8D285D01F3A2AA900B38EE3 /* SMJParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285871F3A2AA900B38EE3 /* SMJParameter.h */; };
+		E8D285D11F3A2AA900B38EE3 /* SMJParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285881F3A2AA900B38EE3 /* SMJParameter.m */; };
+		E8D285D21F3A2AA900B38EE3 /* SMJParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285881F3A2AA900B38EE3 /* SMJParameter.m */; };
+		E8D285D31F3A2AA900B38EE3 /* SMJPath.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285891F3A2AA900B38EE3 /* SMJPath.h */; };
+		E8D285D41F3A2AA900B38EE3 /* SMJPathCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2858A1F3A2AA900B38EE3 /* SMJPathCompiler.h */; };
+		E8D285D51F3A2AA900B38EE3 /* SMJPathCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2858B1F3A2AA900B38EE3 /* SMJPathCompiler.m */; };
+		E8D285D61F3A2AA900B38EE3 /* SMJPathCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2858B1F3A2AA900B38EE3 /* SMJPathCompiler.m */; };
+		E8D285D71F3A2AA900B38EE3 /* SMJPathFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2858C1F3A2AA900B38EE3 /* SMJPathFunction.h */; };
+		E8D285D81F3A2AA900B38EE3 /* SMJPathRef.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2858D1F3A2AA900B38EE3 /* SMJPathRef.h */; };
+		E8D285D91F3A2AA900B38EE3 /* SMJPathRef.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2858E1F3A2AA900B38EE3 /* SMJPathRef.m */; };
+		E8D285DA1F3A2AA900B38EE3 /* SMJPathRef.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2858E1F3A2AA900B38EE3 /* SMJPathRef.m */; };
+		E8D285DB1F3A2AA900B38EE3 /* SMJPathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2858F1F3A2AA900B38EE3 /* SMJPathToken.h */; };
+		E8D285DC1F3A2AA900B38EE3 /* SMJPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285901F3A2AA900B38EE3 /* SMJPathToken.m */; };
+		E8D285DD1F3A2AA900B38EE3 /* SMJPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285901F3A2AA900B38EE3 /* SMJPathToken.m */; };
+		E8D285DE1F3A2AA900B38EE3 /* SMJPathTokenAppender.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285911F3A2AA900B38EE3 /* SMJPathTokenAppender.h */; };
+		E8D285DF1F3A2AA900B38EE3 /* SMJPredicate.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285921F3A2AA900B38EE3 /* SMJPredicate.h */; };
+		E8D285E01F3A2AA900B38EE3 /* SMJPredicateContextImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285931F3A2AA900B38EE3 /* SMJPredicateContextImpl.h */; };
+		E8D285E11F3A2AA900B38EE3 /* SMJPredicateContextImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285941F3A2AA900B38EE3 /* SMJPredicateContextImpl.m */; };
+		E8D285E21F3A2AA900B38EE3 /* SMJPredicateContextImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285941F3A2AA900B38EE3 /* SMJPredicateContextImpl.m */; };
+		E8D285E31F3A2AA900B38EE3 /* SMJPredicatePathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285951F3A2AA900B38EE3 /* SMJPredicatePathToken.h */; };
+		E8D285E41F3A2AA900B38EE3 /* SMJPredicatePathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285961F3A2AA900B38EE3 /* SMJPredicatePathToken.m */; };
+		E8D285E51F3A2AA900B38EE3 /* SMJPredicatePathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285961F3A2AA900B38EE3 /* SMJPredicatePathToken.m */; };
+		E8D285E61F3A2AA900B38EE3 /* SMJPropertyPathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285971F3A2AA900B38EE3 /* SMJPropertyPathToken.h */; };
+		E8D285E71F3A2AA900B38EE3 /* SMJPropertyPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285981F3A2AA900B38EE3 /* SMJPropertyPathToken.m */; };
+		E8D285E81F3A2AA900B38EE3 /* SMJPropertyPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285981F3A2AA900B38EE3 /* SMJPropertyPathToken.m */; };
+		E8D285E91F3A2AA900B38EE3 /* SMJRelationalExpressionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285991F3A2AA900B38EE3 /* SMJRelationalExpressionNode.h */; };
+		E8D285EA1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2859A1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m */; };
+		E8D285EB1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2859A1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m */; };
+		E8D285EC1F3A2AA900B38EE3 /* SMJRelationalOperator.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2859B1F3A2AA900B38EE3 /* SMJRelationalOperator.h */; };
+		E8D285ED1F3A2AA900B38EE3 /* SMJRelationalOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2859C1F3A2AA900B38EE3 /* SMJRelationalOperator.m */; };
+		E8D285EE1F3A2AA900B38EE3 /* SMJRelationalOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2859C1F3A2AA900B38EE3 /* SMJRelationalOperator.m */; };
+		E8D285EF1F3A2AA900B38EE3 /* SMJRootPathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2859D1F3A2AA900B38EE3 /* SMJRootPathToken.h */; };
+		E8D285F01F3A2AA900B38EE3 /* SMJRootPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2859E1F3A2AA900B38EE3 /* SMJRootPathToken.m */; };
+		E8D285F11F3A2AA900B38EE3 /* SMJRootPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D2859E1F3A2AA900B38EE3 /* SMJRootPathToken.m */; };
+		E8D285F21F3A2AA900B38EE3 /* SMJScanPathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2859F1F3A2AA900B38EE3 /* SMJScanPathToken.h */; };
+		E8D285F31F3A2AA900B38EE3 /* SMJScanPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A01F3A2AA900B38EE3 /* SMJScanPathToken.m */; };
+		E8D285F41F3A2AA900B38EE3 /* SMJScanPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A01F3A2AA900B38EE3 /* SMJScanPathToken.m */; };
+		E8D285F51F3A2AA900B38EE3 /* SMJUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285A11F3A2AA900B38EE3 /* SMJUtils.h */; };
+		E8D285F61F3A2AA900B38EE3 /* SMJUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A21F3A2AA900B38EE3 /* SMJUtils.m */; };
+		E8D285F71F3A2AA900B38EE3 /* SMJUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A21F3A2AA900B38EE3 /* SMJUtils.m */; };
+		E8D285F81F3A2AA900B38EE3 /* SMJValueNode.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285A31F3A2AA900B38EE3 /* SMJValueNode.h */; };
+		E8D285F91F3A2AA900B38EE3 /* SMJValueNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A41F3A2AA900B38EE3 /* SMJValueNode.m */; };
+		E8D285FA1F3A2AA900B38EE3 /* SMJValueNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A41F3A2AA900B38EE3 /* SMJValueNode.m */; };
+		E8D285FB1F3A2AA900B38EE3 /* SMJWildcardPathToken.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D285A51F3A2AA900B38EE3 /* SMJWildcardPathToken.h */; };
+		E8D285FC1F3A2AA900B38EE3 /* SMJWildcardPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A61F3A2AA900B38EE3 /* SMJWildcardPathToken.m */; };
+		E8D285FD1F3A2AA900B38EE3 /* SMJWildcardPathToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D285A61F3A2AA900B38EE3 /* SMJWildcardPathToken.m */; };
+		E8F266D81F43AF4A0063EB0C /* SMJArrayPathTokenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F266D71F43AF4A0063EB0C /* SMJArrayPathTokenTest.m */; };
+		E8F266DA1F43B3110063EB0C /* SMJPredicatePathTokenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F266D91F43B3110063EB0C /* SMJPredicatePathTokenTest.m */; };
+		E8F266DC1F43B6070063EB0C /* SMJPropertyPathTokenTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F266DB1F43B6070063EB0C /* SMJPropertyPathTokenTest.m */; };
+		E8F36B511F447690002F8588 /* SMJJsonPathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F36B501F447690002F8588 /* SMJJsonPathTest.m */; };
+		E8F36B531F447E42002F8588 /* SMJNullHandlingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F36B521F447E42002F8588 /* SMJNullHandlingTest.m */; };
+		E8F36B581F448562002F8588 /* uuid-test.json in Resources */ = {isa = PBXBuildFile; fileRef = E8F36B571F44855F002F8588 /* uuid-test.json */; };
+		E8FF3DCA1F3FBCC500C3DB2C /* SMJCommonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FF3DC91F3FBCC500C3DB2C /* SMJCommonTest.m */; };
+		E8FF3DCE1F3FBE1B00C3DB2C /* SMJUseCaseUUIDTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FF3DCD1F3FBE1A00C3DB2C /* SMJUseCaseUUIDTest.m */; };
+		E8FF3DD01F3FC79B00C3DB2C /* SMJFilterCompilerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FF3DCF1F3FC79B00C3DB2C /* SMJFilterCompilerTest.m */; };
+		E8FF3DD21F3FD58C00C3DB2C /* SMJFilterParseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FF3DD11F3FD58C00C3DB2C /* SMJFilterParseTest.m */; };
+		E8FF3DD41F3FD89700C3DB2C /* SMJFilterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FF3DD31F3FD89600C3DB2C /* SMJFilterTest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E816863B1F40F1BA00B38278 /* SMJInlineFilterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJInlineFilterTest.m; sourceTree = "<group>"; };
+		E81686401F41277B00B38278 /* SMJRegexpEvaluatorTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJRegexpEvaluatorTest.m; sourceTree = "<group>"; };
+		E82104D71F41ED4A0001359C /* SMJIssue234.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJIssue234.m; sourceTree = "<group>"; };
+		E82104D91F4202E50001359C /* SMJBaseFunctionTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJBaseFunctionTest.m; sourceTree = "<group>"; };
+		E82104DB1F4202F60001359C /* SMJBaseFunctionTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJBaseFunctionTest.h; sourceTree = "<group>"; };
+		E82104DC1F4255960001359C /* SMJJSONEntityPathFunctionTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJJSONEntityPathFunctionTest.m; sourceTree = "<group>"; };
+		E82104DE1F425BFD0001359C /* SMJNestedFunctionTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJNestedFunctionTest.m; sourceTree = "<group>"; };
+		E82104E01F4265510001359C /* SMJNumericPathFunctionTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJNumericPathFunctionTest.m; sourceTree = "<group>"; };
+		E82104E51F426C6C0001359C /* SMJPathTokenTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJPathTokenTest.m; sourceTree = "<group>"; };
+		E82104E91F4275CD0001359C /* SMJMultiPropTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJMultiPropTest.m; sourceTree = "<group>"; };
+		E82104EB1F427D9F0001359C /* SMJOptionsTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJOptionsTest.m; sourceTree = "<group>"; };
+		E8220E9F1F43ACDF00E7D00C /* SMJArraySlicingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMJArraySlicingTest.m; sourceTree = "<group>"; };
+		E8220EA01F43ACDF00E7D00C /* SMJComplianceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMJComplianceTest.m; sourceTree = "<group>"; };
+		E8850C6D1F44CAD800E4FB36 /* SMJIssue191.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJIssue191.m; sourceTree = "<group>"; };
+		E8850C6F1F44CB4D00E4FB36 /* issue_191.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = issue_191.json; sourceTree = "<group>"; };
+		E8873F511F44331D008475D3 /* SMJScanPathTokenTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJScanPathTokenTest.m; sourceTree = "<group>"; };
+		E8873F531F4437E9008475D3 /* SMJIssuesTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJIssuesTest.m; sourceTree = "<group>"; };
+		E8873F551F443EDC008475D3 /* issue_24.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = issue_24.json; sourceTree = "<group>"; };
+		E8A2891A1F4339A600D8FFA1 /* SMJPathCompilerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJPathCompilerTest.m; sourceTree = "<group>"; };
+		E8A2891C1F435DC600D8FFA1 /* SMJReturnTypeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJReturnTypeTest.m; sourceTree = "<group>"; };
+		E8A2891E1F43600000D8FFA1 /* SMJWriteTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJWriteTest.m; sourceTree = "<group>"; };
+		E8A289201F43752600D8FFA1 /* json_array_multiple_delete.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = json_array_multiple_delete.json; sourceTree = "<group>"; };
+		E8A289271F43ABB100D8FFA1 /* SMJArrayIndexFilterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJArrayIndexFilterTest.m; sourceTree = "<group>"; };
+		E8A301551F3E44FD0025FE8E /* SMJBaseTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJBaseTest.m; sourceTree = "<group>"; };
+		E8A301571F3E45100025FE8E /* SMJBaseTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJBaseTest.h; sourceTree = "<group>"; };
+		E8A301581F3E7E210025FE8E /* SMJEvaluationListenerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJEvaluationListenerTest.m; sourceTree = "<group>"; };
+		E8D2853C1F3A29B000B38EE3 /* SMJJSONPath.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SMJJSONPath.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D2853F1F3A29B000B38EE3 /* SMJJSONPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJJSONPath.h; sourceTree = "<group>"; };
+		E8D285401F3A29B000B38EE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D285451F3A29B000B38EE3 /* SMJJSONPathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMJJSONPathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D2854A1F3A29B000B38EE3 /* SMJDeepScanTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJDeepScanTest.m; sourceTree = "<group>"; };
+		E8D2854C1F3A29B000B38EE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D285571F3A2A2A00B38EE3 /* SMJConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMJConfiguration.h; sourceTree = "<group>"; };
+		E8D285581F3A2A2A00B38EE3 /* SMJConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMJConfiguration.m; sourceTree = "<group>"; };
+		E8D285591F3A2A2A00B38EE3 /* SMJEvaluationListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMJEvaluationListener.h; sourceTree = "<group>"; };
+		E8D2855B1F3A2A2A00B38EE3 /* SMJJSONPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMJJSONPath.m; sourceTree = "<group>"; };
+		E8D2855C1F3A2A2A00B38EE3 /* SMJOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMJOption.h; sourceTree = "<group>"; };
+		E8D2855D1F3A2A2A00B38EE3 /* SMJPathFunctionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMJPathFunctionFactory.h; sourceTree = "<group>"; };
+		E8D2855E1F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMJPathFunctionFactory.m; sourceTree = "<group>"; };
+		E8D2856B1F3A2AA900B38EE3 /* SMJArrayIndexOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJArrayIndexOperation.h; path = Internals/SMJArrayIndexOperation.h; sourceTree = "<group>"; };
+		E8D2856C1F3A2AA900B38EE3 /* SMJArrayIndexOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJArrayIndexOperation.m; path = Internals/SMJArrayIndexOperation.m; sourceTree = "<group>"; };
+		E8D2856D1F3A2AA900B38EE3 /* SMJArrayPathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJArrayPathToken.h; path = Internals/SMJArrayPathToken.h; sourceTree = "<group>"; };
+		E8D2856E1F3A2AA900B38EE3 /* SMJArrayPathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJArrayPathToken.m; path = Internals/SMJArrayPathToken.m; sourceTree = "<group>"; };
+		E8D2856F1F3A2AA900B38EE3 /* SMJArraySliceOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJArraySliceOperation.h; path = Internals/SMJArraySliceOperation.h; sourceTree = "<group>"; };
+		E8D285701F3A2AA900B38EE3 /* SMJArraySliceOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJArraySliceOperation.m; path = Internals/SMJArraySliceOperation.m; sourceTree = "<group>"; };
+		E8D285711F3A2AA900B38EE3 /* SMJCharacterIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJCharacterIndex.h; path = Internals/SMJCharacterIndex.h; sourceTree = "<group>"; };
+		E8D285721F3A2AA900B38EE3 /* SMJCharacterIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJCharacterIndex.m; path = Internals/SMJCharacterIndex.m; sourceTree = "<group>"; };
+		E8D285731F3A2AA900B38EE3 /* SMJCompiledPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJCompiledPath.h; path = Internals/SMJCompiledPath.h; sourceTree = "<group>"; };
+		E8D285741F3A2AA900B38EE3 /* SMJCompiledPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJCompiledPath.m; path = Internals/SMJCompiledPath.m; sourceTree = "<group>"; };
+		E8D285751F3A2AA900B38EE3 /* SMJEvaluationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJEvaluationContext.h; path = Internals/SMJEvaluationContext.h; sourceTree = "<group>"; };
+		E8D285761F3A2AA900B38EE3 /* SMJEvaluationContextImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJEvaluationContextImpl.h; path = Internals/SMJEvaluationContextImpl.h; sourceTree = "<group>"; };
+		E8D285771F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJEvaluationContextImpl.m; path = Internals/SMJEvaluationContextImpl.m; sourceTree = "<group>"; };
+		E8D285781F3A2AA900B38EE3 /* SMJEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJEvaluator.h; path = Internals/SMJEvaluator.h; sourceTree = "<group>"; };
+		E8D285791F3A2AA900B38EE3 /* SMJEvaluatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJEvaluatorFactory.h; path = Internals/SMJEvaluatorFactory.h; sourceTree = "<group>"; };
+		E8D2857A1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJEvaluatorFactory.m; path = Internals/SMJEvaluatorFactory.m; sourceTree = "<group>"; };
+		E8D2857B1F3A2AA900B38EE3 /* SMJExpressionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJExpressionNode.h; path = Internals/SMJExpressionNode.h; sourceTree = "<group>"; };
+		E8D2857C1F3A2AA900B38EE3 /* SMJExpressionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJExpressionNode.m; path = Internals/SMJExpressionNode.m; sourceTree = "<group>"; };
+		E8D2857D1F3A2AA900B38EE3 /* SMJFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJFilter.h; path = Internals/SMJFilter.h; sourceTree = "<group>"; };
+		E8D2857E1F3A2AA900B38EE3 /* SMJFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJFilter.m; path = Internals/SMJFilter.m; sourceTree = "<group>"; };
+		E8D2857F1F3A2AA900B38EE3 /* SMJFilterCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJFilterCompiler.h; path = Internals/SMJFilterCompiler.h; sourceTree = "<group>"; };
+		E8D285801F3A2AA900B38EE3 /* SMJFilterCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJFilterCompiler.m; path = Internals/SMJFilterCompiler.m; sourceTree = "<group>"; };
+		E8D285811F3A2AA900B38EE3 /* SMJFunctionPathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJFunctionPathToken.h; path = Internals/SMJFunctionPathToken.h; sourceTree = "<group>"; };
+		E8D285821F3A2AA900B38EE3 /* SMJFunctionPathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJFunctionPathToken.m; path = Internals/SMJFunctionPathToken.m; sourceTree = "<group>"; };
+		E8D285831F3A2AA900B38EE3 /* SMJLogicalExpressionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJLogicalExpressionNode.h; path = Internals/SMJLogicalExpressionNode.h; sourceTree = "<group>"; };
+		E8D285841F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJLogicalExpressionNode.m; path = Internals/SMJLogicalExpressionNode.m; sourceTree = "<group>"; };
+		E8D285851F3A2AA900B38EE3 /* SMJLogicalOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJLogicalOperator.h; path = Internals/SMJLogicalOperator.h; sourceTree = "<group>"; };
+		E8D285861F3A2AA900B38EE3 /* SMJLogicalOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJLogicalOperator.m; path = Internals/SMJLogicalOperator.m; sourceTree = "<group>"; };
+		E8D285871F3A2AA900B38EE3 /* SMJParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJParameter.h; path = Internals/SMJParameter.h; sourceTree = "<group>"; };
+		E8D285881F3A2AA900B38EE3 /* SMJParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJParameter.m; path = Internals/SMJParameter.m; sourceTree = "<group>"; };
+		E8D285891F3A2AA900B38EE3 /* SMJPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPath.h; path = Internals/SMJPath.h; sourceTree = "<group>"; };
+		E8D2858A1F3A2AA900B38EE3 /* SMJPathCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPathCompiler.h; path = Internals/SMJPathCompiler.h; sourceTree = "<group>"; };
+		E8D2858B1F3A2AA900B38EE3 /* SMJPathCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJPathCompiler.m; path = Internals/SMJPathCompiler.m; sourceTree = "<group>"; };
+		E8D2858C1F3A2AA900B38EE3 /* SMJPathFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPathFunction.h; path = Internals/SMJPathFunction.h; sourceTree = "<group>"; };
+		E8D2858D1F3A2AA900B38EE3 /* SMJPathRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPathRef.h; path = Internals/SMJPathRef.h; sourceTree = "<group>"; };
+		E8D2858E1F3A2AA900B38EE3 /* SMJPathRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJPathRef.m; path = Internals/SMJPathRef.m; sourceTree = "<group>"; };
+		E8D2858F1F3A2AA900B38EE3 /* SMJPathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPathToken.h; path = Internals/SMJPathToken.h; sourceTree = "<group>"; };
+		E8D285901F3A2AA900B38EE3 /* SMJPathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJPathToken.m; path = Internals/SMJPathToken.m; sourceTree = "<group>"; };
+		E8D285911F3A2AA900B38EE3 /* SMJPathTokenAppender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPathTokenAppender.h; path = Internals/SMJPathTokenAppender.h; sourceTree = "<group>"; };
+		E8D285921F3A2AA900B38EE3 /* SMJPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPredicate.h; path = Internals/SMJPredicate.h; sourceTree = "<group>"; };
+		E8D285931F3A2AA900B38EE3 /* SMJPredicateContextImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPredicateContextImpl.h; path = Internals/SMJPredicateContextImpl.h; sourceTree = "<group>"; };
+		E8D285941F3A2AA900B38EE3 /* SMJPredicateContextImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJPredicateContextImpl.m; path = Internals/SMJPredicateContextImpl.m; sourceTree = "<group>"; };
+		E8D285951F3A2AA900B38EE3 /* SMJPredicatePathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPredicatePathToken.h; path = Internals/SMJPredicatePathToken.h; sourceTree = "<group>"; };
+		E8D285961F3A2AA900B38EE3 /* SMJPredicatePathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJPredicatePathToken.m; path = Internals/SMJPredicatePathToken.m; sourceTree = "<group>"; };
+		E8D285971F3A2AA900B38EE3 /* SMJPropertyPathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJPropertyPathToken.h; path = Internals/SMJPropertyPathToken.h; sourceTree = "<group>"; };
+		E8D285981F3A2AA900B38EE3 /* SMJPropertyPathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJPropertyPathToken.m; path = Internals/SMJPropertyPathToken.m; sourceTree = "<group>"; };
+		E8D285991F3A2AA900B38EE3 /* SMJRelationalExpressionNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJRelationalExpressionNode.h; path = Internals/SMJRelationalExpressionNode.h; sourceTree = "<group>"; };
+		E8D2859A1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJRelationalExpressionNode.m; path = Internals/SMJRelationalExpressionNode.m; sourceTree = "<group>"; };
+		E8D2859B1F3A2AA900B38EE3 /* SMJRelationalOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJRelationalOperator.h; path = Internals/SMJRelationalOperator.h; sourceTree = "<group>"; };
+		E8D2859C1F3A2AA900B38EE3 /* SMJRelationalOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJRelationalOperator.m; path = Internals/SMJRelationalOperator.m; sourceTree = "<group>"; };
+		E8D2859D1F3A2AA900B38EE3 /* SMJRootPathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJRootPathToken.h; path = Internals/SMJRootPathToken.h; sourceTree = "<group>"; };
+		E8D2859E1F3A2AA900B38EE3 /* SMJRootPathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJRootPathToken.m; path = Internals/SMJRootPathToken.m; sourceTree = "<group>"; };
+		E8D2859F1F3A2AA900B38EE3 /* SMJScanPathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJScanPathToken.h; path = Internals/SMJScanPathToken.h; sourceTree = "<group>"; };
+		E8D285A01F3A2AA900B38EE3 /* SMJScanPathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJScanPathToken.m; path = Internals/SMJScanPathToken.m; sourceTree = "<group>"; };
+		E8D285A11F3A2AA900B38EE3 /* SMJUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJUtils.h; path = Internals/SMJUtils.h; sourceTree = "<group>"; };
+		E8D285A21F3A2AA900B38EE3 /* SMJUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJUtils.m; path = Internals/SMJUtils.m; sourceTree = "<group>"; };
+		E8D285A31F3A2AA900B38EE3 /* SMJValueNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJValueNode.h; path = Internals/SMJValueNode.h; sourceTree = "<group>"; };
+		E8D285A41F3A2AA900B38EE3 /* SMJValueNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJValueNode.m; path = Internals/SMJValueNode.m; sourceTree = "<group>"; };
+		E8D285A51F3A2AA900B38EE3 /* SMJWildcardPathToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMJWildcardPathToken.h; path = Internals/SMJWildcardPathToken.h; sourceTree = "<group>"; };
+		E8D285A61F3A2AA900B38EE3 /* SMJWildcardPathToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMJWildcardPathToken.m; path = Internals/SMJWildcardPathToken.m; sourceTree = "<group>"; };
+		E8F266D71F43AF4A0063EB0C /* SMJArrayPathTokenTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJArrayPathTokenTest.m; sourceTree = "<group>"; };
+		E8F266D91F43B3110063EB0C /* SMJPredicatePathTokenTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJPredicatePathTokenTest.m; sourceTree = "<group>"; };
+		E8F266DB1F43B6070063EB0C /* SMJPropertyPathTokenTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJPropertyPathTokenTest.m; sourceTree = "<group>"; };
+		E8F36B501F447690002F8588 /* SMJJsonPathTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJJsonPathTest.m; sourceTree = "<group>"; };
+		E8F36B521F447E42002F8588 /* SMJNullHandlingTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJNullHandlingTest.m; sourceTree = "<group>"; };
+		E8F36B571F44855F002F8588 /* uuid-test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "uuid-test.json"; sourceTree = "<group>"; };
+		E8FF3DC91F3FBCC500C3DB2C /* SMJCommonTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJCommonTest.m; sourceTree = "<group>"; };
+		E8FF3DCB1F3FBCDE00C3DB2C /* SMJCommonTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMJCommonTest.h; sourceTree = "<group>"; };
+		E8FF3DCD1F3FBE1A00C3DB2C /* SMJUseCaseUUIDTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJUseCaseUUIDTest.m; sourceTree = "<group>"; };
+		E8FF3DCF1F3FC79B00C3DB2C /* SMJFilterCompilerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJFilterCompilerTest.m; sourceTree = "<group>"; };
+		E8FF3DD11F3FD58C00C3DB2C /* SMJFilterParseTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJFilterParseTest.m; sourceTree = "<group>"; };
+		E8FF3DD31F3FD89600C3DB2C /* SMJFilterTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMJFilterTest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8D285381F3A29B000B38EE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D285421F3A29B000B38EE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E816863D1F41273100B38278 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				E816863E1F41273E00B38278 /* filter */,
+				E82104D61F41ED090001359C /* function */,
+				E82104E41F426C4C0001359C /* path */,
+			);
+			name = internal;
+			sourceTree = "<group>";
+		};
+		E816863E1F41273E00B38278 /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				E81686401F41277B00B38278 /* SMJRegexpEvaluatorTest.m */,
+			);
+			name = filter;
+			sourceTree = "<group>";
+		};
+		E82104D61F41ED090001359C /* function */ = {
+			isa = PBXGroup;
+			children = (
+				E82104DB1F4202F60001359C /* SMJBaseFunctionTest.h */,
+				E82104D91F4202E50001359C /* SMJBaseFunctionTest.m */,
+				E82104D71F41ED4A0001359C /* SMJIssue234.m */,
+				E8850C6D1F44CAD800E4FB36 /* SMJIssue191.m */,
+				E82104DC1F4255960001359C /* SMJJSONEntityPathFunctionTest.m */,
+				E82104DE1F425BFD0001359C /* SMJNestedFunctionTest.m */,
+				E82104E01F4265510001359C /* SMJNumericPathFunctionTest.m */,
+			);
+			name = function;
+			sourceTree = "<group>";
+		};
+		E82104E41F426C4C0001359C /* path */ = {
+			isa = PBXGroup;
+			children = (
+				E82104E51F426C6C0001359C /* SMJPathTokenTest.m */,
+			);
+			name = path;
+			sourceTree = "<group>";
+		};
+		E8A289221F43758100D8FFA1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8A289201F43752600D8FFA1 /* json_array_multiple_delete.json */,
+				E8873F551F443EDC008475D3 /* issue_24.json */,
+				E8850C6F1F44CB4D00E4FB36 /* issue_191.json */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		E8A2892A1F43AC6300D8FFA1 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				E8220E9F1F43ACDF00E7D00C /* SMJArraySlicingTest.m */,
+				E8220EA01F43ACDF00E7D00C /* SMJComplianceTest.m */,
+				E8873F531F4437E9008475D3 /* SMJIssuesTest.m */,
+				E8F36B501F447690002F8588 /* SMJJsonPathTest.m */,
+				E8F36B521F447E42002F8588 /* SMJNullHandlingTest.m */,
+				E8A2892B1F43AC7300D8FFA1 /* internal */,
+			);
+			name = old;
+			sourceTree = "<group>";
+		};
+		E8A2892B1F43AC7300D8FFA1 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				E8A289271F43ABB100D8FFA1 /* SMJArrayIndexFilterTest.m */,
+				E8F266D71F43AF4A0063EB0C /* SMJArrayPathTokenTest.m */,
+				E8F266D91F43B3110063EB0C /* SMJPredicatePathTokenTest.m */,
+				E8F266DB1F43B6070063EB0C /* SMJPropertyPathTokenTest.m */,
+				E8873F511F44331D008475D3 /* SMJScanPathTokenTest.m */,
+			);
+			name = internal;
+			sourceTree = "<group>";
+		};
+		E8A3014F1F3E3ECC0025FE8E /* Jayway */ = {
+			isa = PBXGroup;
+			children = (
+				E8A301571F3E45100025FE8E /* SMJBaseTest.h */,
+				E8A301551F3E44FD0025FE8E /* SMJBaseTest.m */,
+				E8D2854A1F3A29B000B38EE3 /* SMJDeepScanTest.m */,
+				E8A301581F3E7E210025FE8E /* SMJEvaluationListenerTest.m */,
+				E8FF3DCF1F3FC79B00C3DB2C /* SMJFilterCompilerTest.m */,
+				E8FF3DD11F3FD58C00C3DB2C /* SMJFilterParseTest.m */,
+				E8FF3DD31F3FD89600C3DB2C /* SMJFilterTest.m */,
+				E816863B1F40F1BA00B38278 /* SMJInlineFilterTest.m */,
+				E82104E91F4275CD0001359C /* SMJMultiPropTest.m */,
+				E82104EB1F427D9F0001359C /* SMJOptionsTest.m */,
+				E8A2891A1F4339A600D8FFA1 /* SMJPathCompilerTest.m */,
+				E8A2891C1F435DC600D8FFA1 /* SMJReturnTypeTest.m */,
+				E8A2891E1F43600000D8FFA1 /* SMJWriteTest.m */,
+				E816863D1F41273100B38278 /* internal */,
+				E8A2892A1F43AC6300D8FFA1 /* old */,
+				E8A289221F43758100D8FFA1 /* resources */,
+			);
+			path = Jayway;
+			sourceTree = "<group>";
+		};
+		E8D285321F3A29B000B38EE3 = {
+			isa = PBXGroup;
+			children = (
+				E8D2853E1F3A29B000B38EE3 /* SMJJSONPath */,
+				E8D285491F3A29B000B38EE3 /* SMJJSONPathTests */,
+				E8D2853D1F3A29B000B38EE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8D2853D1F3A29B000B38EE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D2853C1F3A29B000B38EE3 /* SMJJSONPath.framework */,
+				E8D285451F3A29B000B38EE3 /* SMJJSONPathTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D2853E1F3A29B000B38EE3 /* SMJJSONPath */ = {
+			isa = PBXGroup;
+			children = (
+				E8D2853F1F3A29B000B38EE3 /* SMJJSONPath.h */,
+				E8D285561F3A2A1600B38EE3 /* Public */,
+				E8D2856A1F3A2A9C00B38EE3 /* Private */,
+				E8D285401F3A29B000B38EE3 /* Info.plist */,
+			);
+			path = SMJJSONPath;
+			sourceTree = "<group>";
+		};
+		E8D285491F3A29B000B38EE3 /* SMJJSONPathTests */ = {
+			isa = PBXGroup;
+			children = (
+				E8FF3DCB1F3FBCDE00C3DB2C /* SMJCommonTest.h */,
+				E8FF3DC91F3FBCC500C3DB2C /* SMJCommonTest.m */,
+				E8A3014F1F3E3ECC0025FE8E /* Jayway */,
+				E8FF3DCC1F3FBDDE00C3DB2C /* SourceMac */,
+				E8D2854C1F3A29B000B38EE3 /* Info.plist */,
+			);
+			path = SMJJSONPathTests;
+			sourceTree = "<group>";
+		};
+		E8D285561F3A2A1600B38EE3 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				E8D2855B1F3A2A2A00B38EE3 /* SMJJSONPath.m */,
+				E8D285571F3A2A2A00B38EE3 /* SMJConfiguration.h */,
+				E8D285581F3A2A2A00B38EE3 /* SMJConfiguration.m */,
+				E8D285591F3A2A2A00B38EE3 /* SMJEvaluationListener.h */,
+				E8D2855C1F3A2A2A00B38EE3 /* SMJOption.h */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		E8D2856A1F3A2A9C00B38EE3 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				E8D285FE1F3A2ABA00B38EE3 /* Protocols */,
+				E8D285FF1F3A2B2000B38EE3 /* Components */,
+				E8D286041F3A2CB200B38EE3 /* Factories */,
+				E8D286021F3A2B8700B38EE3 /* Compilers */,
+				E8D286031F3A2BA100B38EE3 /* Tools */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+		E8D285FE1F3A2ABA00B38EE3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E8D285891F3A2AA900B38EE3 /* SMJPath.h */,
+				E8D285751F3A2AA900B38EE3 /* SMJEvaluationContext.h */,
+				E8D285911F3A2AA900B38EE3 /* SMJPathTokenAppender.h */,
+				E8D285921F3A2AA900B38EE3 /* SMJPredicate.h */,
+				E8D2858C1F3A2AA900B38EE3 /* SMJPathFunction.h */,
+				E8D285781F3A2AA900B38EE3 /* SMJEvaluator.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		E8D285FF1F3A2B2000B38EE3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E8D286001F3A2B2B00B38EE3 /* Tokens */,
+				E8D286011F3A2B3000B38EE3 /* Predicates */,
+				E8D285711F3A2AA900B38EE3 /* SMJCharacterIndex.h */,
+				E8D285721F3A2AA900B38EE3 /* SMJCharacterIndex.m */,
+				E8D2858D1F3A2AA900B38EE3 /* SMJPathRef.h */,
+				E8D2858E1F3A2AA900B38EE3 /* SMJPathRef.m */,
+				E8D285731F3A2AA900B38EE3 /* SMJCompiledPath.h */,
+				E8D285741F3A2AA900B38EE3 /* SMJCompiledPath.m */,
+				E8D285871F3A2AA900B38EE3 /* SMJParameter.h */,
+				E8D285881F3A2AA900B38EE3 /* SMJParameter.m */,
+				E8D285761F3A2AA900B38EE3 /* SMJEvaluationContextImpl.h */,
+				E8D285771F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m */,
+				E8D285931F3A2AA900B38EE3 /* SMJPredicateContextImpl.h */,
+				E8D285941F3A2AA900B38EE3 /* SMJPredicateContextImpl.m */,
+				E8D285851F3A2AA900B38EE3 /* SMJLogicalOperator.h */,
+				E8D285861F3A2AA900B38EE3 /* SMJLogicalOperator.m */,
+				E8D2859B1F3A2AA900B38EE3 /* SMJRelationalOperator.h */,
+				E8D2859C1F3A2AA900B38EE3 /* SMJRelationalOperator.m */,
+				E8D285A31F3A2AA900B38EE3 /* SMJValueNode.h */,
+				E8D285A41F3A2AA900B38EE3 /* SMJValueNode.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		E8D286001F3A2B2B00B38EE3 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				E8D2858F1F3A2AA900B38EE3 /* SMJPathToken.h */,
+				E8D285901F3A2AA900B38EE3 /* SMJPathToken.m */,
+				E8D2859D1F3A2AA900B38EE3 /* SMJRootPathToken.h */,
+				E8D2859E1F3A2AA900B38EE3 /* SMJRootPathToken.m */,
+				E8D2859F1F3A2AA900B38EE3 /* SMJScanPathToken.h */,
+				E8D285A01F3A2AA900B38EE3 /* SMJScanPathToken.m */,
+				E8D285811F3A2AA900B38EE3 /* SMJFunctionPathToken.h */,
+				E8D285821F3A2AA900B38EE3 /* SMJFunctionPathToken.m */,
+				E8D285971F3A2AA900B38EE3 /* SMJPropertyPathToken.h */,
+				E8D285981F3A2AA900B38EE3 /* SMJPropertyPathToken.m */,
+				E8D285951F3A2AA900B38EE3 /* SMJPredicatePathToken.h */,
+				E8D285961F3A2AA900B38EE3 /* SMJPredicatePathToken.m */,
+				E8D2856D1F3A2AA900B38EE3 /* SMJArrayPathToken.h */,
+				E8D2856E1F3A2AA900B38EE3 /* SMJArrayPathToken.m */,
+				E8D285A51F3A2AA900B38EE3 /* SMJWildcardPathToken.h */,
+				E8D285A61F3A2AA900B38EE3 /* SMJWildcardPathToken.m */,
+			);
+			name = Tokens;
+			sourceTree = "<group>";
+		};
+		E8D286011F3A2B3000B38EE3 /* Predicates */ = {
+			isa = PBXGroup;
+			children = (
+				E8D2857D1F3A2AA900B38EE3 /* SMJFilter.h */,
+				E8D2857E1F3A2AA900B38EE3 /* SMJFilter.m */,
+				E8D2857B1F3A2AA900B38EE3 /* SMJExpressionNode.h */,
+				E8D2857C1F3A2AA900B38EE3 /* SMJExpressionNode.m */,
+				E8D285831F3A2AA900B38EE3 /* SMJLogicalExpressionNode.h */,
+				E8D285841F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m */,
+				E8D285991F3A2AA900B38EE3 /* SMJRelationalExpressionNode.h */,
+				E8D2859A1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m */,
+			);
+			name = Predicates;
+			sourceTree = "<group>";
+		};
+		E8D286021F3A2B8700B38EE3 /* Compilers */ = {
+			isa = PBXGroup;
+			children = (
+				E8D2858A1F3A2AA900B38EE3 /* SMJPathCompiler.h */,
+				E8D2858B1F3A2AA900B38EE3 /* SMJPathCompiler.m */,
+				E8D2857F1F3A2AA900B38EE3 /* SMJFilterCompiler.h */,
+				E8D285801F3A2AA900B38EE3 /* SMJFilterCompiler.m */,
+			);
+			name = Compilers;
+			sourceTree = "<group>";
+		};
+		E8D286031F3A2BA100B38EE3 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E8D285A11F3A2AA900B38EE3 /* SMJUtils.h */,
+				E8D285A21F3A2AA900B38EE3 /* SMJUtils.m */,
+				E8D2856F1F3A2AA900B38EE3 /* SMJArraySliceOperation.h */,
+				E8D285701F3A2AA900B38EE3 /* SMJArraySliceOperation.m */,
+				E8D2856B1F3A2AA900B38EE3 /* SMJArrayIndexOperation.h */,
+				E8D2856C1F3A2AA900B38EE3 /* SMJArrayIndexOperation.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		E8D286041F3A2CB200B38EE3 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				E8D285791F3A2AA900B38EE3 /* SMJEvaluatorFactory.h */,
+				E8D2857A1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m */,
+				E8D2855D1F3A2A2A00B38EE3 /* SMJPathFunctionFactory.h */,
+				E8D2855E1F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		E8F36B561F448526002F8588 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8F36B571F44855F002F8588 /* uuid-test.json */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		E8FF3DCC1F3FBDDE00C3DB2C /* SourceMac */ = {
+			isa = PBXGroup;
+			children = (
+				E8FF3DCD1F3FBE1A00C3DB2C /* SMJUseCaseUUIDTest.m */,
+				E8F36B561F448526002F8588 /* resources */,
+			);
+			path = SourceMac;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E8D285391F3A29B000B38EE3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D285FB1F3A2AA900B38EE3 /* SMJWildcardPathToken.h in Headers */,
+				E8D285AD1F3A2AA900B38EE3 /* SMJArraySliceOperation.h in Headers */,
+				E8D285C11F3A2AA900B38EE3 /* SMJFilter.h in Headers */,
+				E8D285B31F3A2AA900B38EE3 /* SMJCompiledPath.h in Headers */,
+				E8D285F51F3A2AA900B38EE3 /* SMJUtils.h in Headers */,
+				E8D285B61F3A2AA900B38EE3 /* SMJEvaluationContext.h in Headers */,
+				E8D285A71F3A2AA900B38EE3 /* SMJArrayIndexOperation.h in Headers */,
+				E8D285BB1F3A2AA900B38EE3 /* SMJEvaluatorFactory.h in Headers */,
+				E8D285DB1F3A2AA900B38EE3 /* SMJPathToken.h in Headers */,
+				E8D285DF1F3A2AA900B38EE3 /* SMJPredicate.h in Headers */,
+				E8D2855F1F3A2A2A00B38EE3 /* SMJConfiguration.h in Headers */,
+				E8D285CA1F3A2AA900B38EE3 /* SMJLogicalExpressionNode.h in Headers */,
+				E8D285B01F3A2AA900B38EE3 /* SMJCharacterIndex.h in Headers */,
+				E8D285EC1F3A2AA900B38EE3 /* SMJRelationalOperator.h in Headers */,
+				E8D285D41F3A2AA900B38EE3 /* SMJPathCompiler.h in Headers */,
+				E8D285E31F3A2AA900B38EE3 /* SMJPredicatePathToken.h in Headers */,
+				E8D285C71F3A2AA900B38EE3 /* SMJFunctionPathToken.h in Headers */,
+				E8D285D31F3A2AA900B38EE3 /* SMJPath.h in Headers */,
+				E8D285D71F3A2AA900B38EE3 /* SMJPathFunction.h in Headers */,
+				E8D285F81F3A2AA900B38EE3 /* SMJValueNode.h in Headers */,
+				E8D285BE1F3A2AA900B38EE3 /* SMJExpressionNode.h in Headers */,
+				E8D285DE1F3A2AA900B38EE3 /* SMJPathTokenAppender.h in Headers */,
+				E8D285D01F3A2AA900B38EE3 /* SMJParameter.h in Headers */,
+				E8D285CD1F3A2AA900B38EE3 /* SMJLogicalOperator.h in Headers */,
+				E8D285C41F3A2AA900B38EE3 /* SMJFilterCompiler.h in Headers */,
+				E8D2854D1F3A29B000B38EE3 /* SMJJSONPath.h in Headers */,
+				E8D285F21F3A2AA900B38EE3 /* SMJScanPathToken.h in Headers */,
+				E8D285671F3A2A2A00B38EE3 /* SMJPathFunctionFactory.h in Headers */,
+				E8D285EF1F3A2AA900B38EE3 /* SMJRootPathToken.h in Headers */,
+				E8D285621F3A2A2A00B38EE3 /* SMJEvaluationListener.h in Headers */,
+				E8D285E61F3A2AA900B38EE3 /* SMJPropertyPathToken.h in Headers */,
+				E8D285E01F3A2AA900B38EE3 /* SMJPredicateContextImpl.h in Headers */,
+				E8D285B71F3A2AA900B38EE3 /* SMJEvaluationContextImpl.h in Headers */,
+				E8D285D81F3A2AA900B38EE3 /* SMJPathRef.h in Headers */,
+				E8D285AA1F3A2AA900B38EE3 /* SMJArrayPathToken.h in Headers */,
+				E8D285BA1F3A2AA900B38EE3 /* SMJEvaluator.h in Headers */,
+				E8D285E91F3A2AA900B38EE3 /* SMJRelationalExpressionNode.h in Headers */,
+				E8D285661F3A2A2A00B38EE3 /* SMJOption.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E8D2853B1F3A29B000B38EE3 /* SMJJSONPath */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D285501F3A29B000B38EE3 /* Build configuration list for PBXNativeTarget "SMJJSONPath" */;
+			buildPhases = (
+				E8D285371F3A29B000B38EE3 /* Sources */,
+				E8D285381F3A29B000B38EE3 /* Frameworks */,
+				E8D285391F3A29B000B38EE3 /* Headers */,
+				E8D2853A1F3A29B000B38EE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMJJSONPath;
+			productName = SMJJSONPath;
+			productReference = E8D2853C1F3A29B000B38EE3 /* SMJJSONPath.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E8D285441F3A29B000B38EE3 /* SMJJSONPathTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D285531F3A29B000B38EE3 /* Build configuration list for PBXNativeTarget "SMJJSONPathTests" */;
+			buildPhases = (
+				E8D285411F3A29B000B38EE3 /* Sources */,
+				E8D285421F3A29B000B38EE3 /* Frameworks */,
+				E8D285431F3A29B000B38EE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMJJSONPathTests;
+			productName = SMJJSONPathTests;
+			productReference = E8D285451F3A29B000B38EE3 /* SMJJSONPathTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8D285331F3A29B000B38EE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = SourceMac;
+				TargetAttributes = {
+					E8D2853B1F3A29B000B38EE3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					E8D285441F3A29B000B38EE3 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E8D285361F3A29B000B38EE3 /* Build configuration list for PBXProject "SMJJSONPath" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8D285321F3A29B000B38EE3;
+			productRefGroup = E8D2853D1F3A29B000B38EE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8D2853B1F3A29B000B38EE3 /* SMJJSONPath */,
+				E8D285441F3A29B000B38EE3 /* SMJJSONPathTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8D2853A1F3A29B000B38EE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D285431F3A29B000B38EE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A289211F43757500D8FFA1 /* json_array_multiple_delete.json in Resources */,
+				E8850C701F44CB5400E4FB36 /* issue_191.json in Resources */,
+				E8873F561F443FAC008475D3 /* issue_24.json in Resources */,
+				E8F36B581F448562002F8588 /* uuid-test.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8D285371F3A29B000B38EE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D285CE1F3A2AA900B38EE3 /* SMJLogicalOperator.m in Sources */,
+				E8D285BF1F3A2AA900B38EE3 /* SMJExpressionNode.m in Sources */,
+				E8D285D51F3A2AA900B38EE3 /* SMJPathCompiler.m in Sources */,
+				E8D285E41F3A2AA900B38EE3 /* SMJPredicatePathToken.m in Sources */,
+				E8D285D91F3A2AA900B38EE3 /* SMJPathRef.m in Sources */,
+				E8D285F01F3A2AA900B38EE3 /* SMJRootPathToken.m in Sources */,
+				E8D285B41F3A2AA900B38EE3 /* SMJCompiledPath.m in Sources */,
+				E8D285C21F3A2AA900B38EE3 /* SMJFilter.m in Sources */,
+				E8D285BC1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m in Sources */,
+				E8D285FC1F3A2AA900B38EE3 /* SMJWildcardPathToken.m in Sources */,
+				E8D285601F3A2A2A00B38EE3 /* SMJConfiguration.m in Sources */,
+				E8D285AB1F3A2AA900B38EE3 /* SMJArrayPathToken.m in Sources */,
+				E8D285A81F3A2AA900B38EE3 /* SMJArrayIndexOperation.m in Sources */,
+				E8D285E11F3A2AA900B38EE3 /* SMJPredicateContextImpl.m in Sources */,
+				E8D285C81F3A2AA900B38EE3 /* SMJFunctionPathToken.m in Sources */,
+				E8D285F31F3A2AA900B38EE3 /* SMJScanPathToken.m in Sources */,
+				E8D285F91F3A2AA900B38EE3 /* SMJValueNode.m in Sources */,
+				E8D285D11F3A2AA900B38EE3 /* SMJParameter.m in Sources */,
+				E8D285B81F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m in Sources */,
+				E8D285681F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m in Sources */,
+				E8D285CB1F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m in Sources */,
+				E8D285ED1F3A2AA900B38EE3 /* SMJRelationalOperator.m in Sources */,
+				E8D285F61F3A2AA900B38EE3 /* SMJUtils.m in Sources */,
+				E8D285641F3A2A2A00B38EE3 /* SMJJSONPath.m in Sources */,
+				E8D285B11F3A2AA900B38EE3 /* SMJCharacterIndex.m in Sources */,
+				E8D285EA1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m in Sources */,
+				E8D285DC1F3A2AA900B38EE3 /* SMJPathToken.m in Sources */,
+				E8D285E71F3A2AA900B38EE3 /* SMJPropertyPathToken.m in Sources */,
+				E8D285AE1F3A2AA900B38EE3 /* SMJArraySliceOperation.m in Sources */,
+				E8D285C51F3A2AA900B38EE3 /* SMJFilterCompiler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8D285411F3A29B000B38EE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8873F521F44331D008475D3 /* SMJScanPathTokenTest.m in Sources */,
+				E8D285DD1F3A2AA900B38EE3 /* SMJPathToken.m in Sources */,
+				E8D285FD1F3A2AA900B38EE3 /* SMJWildcardPathToken.m in Sources */,
+				E8D285F11F3A2AA900B38EE3 /* SMJRootPathToken.m in Sources */,
+				E8FF3DCA1F3FBCC500C3DB2C /* SMJCommonTest.m in Sources */,
+				E8D285CC1F3A2AA900B38EE3 /* SMJLogicalExpressionNode.m in Sources */,
+				E82104E61F426C6C0001359C /* SMJPathTokenTest.m in Sources */,
+				E8A301561F3E44FD0025FE8E /* SMJBaseTest.m in Sources */,
+				E82104EA1F4275CD0001359C /* SMJMultiPropTest.m in Sources */,
+				E8D285C91F3A2AA900B38EE3 /* SMJFunctionPathToken.m in Sources */,
+				E8D285F71F3A2AA900B38EE3 /* SMJUtils.m in Sources */,
+				E8D285B91F3A2AA900B38EE3 /* SMJEvaluationContextImpl.m in Sources */,
+				E82104DF1F425BFD0001359C /* SMJNestedFunctionTest.m in Sources */,
+				E8D285C61F3A2AA900B38EE3 /* SMJFilterCompiler.m in Sources */,
+				E82104E11F4265510001359C /* SMJNumericPathFunctionTest.m in Sources */,
+				E8D285691F3A2A2A00B38EE3 /* SMJPathFunctionFactory.m in Sources */,
+				E8F266DA1F43B3110063EB0C /* SMJPredicatePathTokenTest.m in Sources */,
+				E8F266DC1F43B6070063EB0C /* SMJPropertyPathTokenTest.m in Sources */,
+				E8A289281F43ABB100D8FFA1 /* SMJArrayIndexFilterTest.m in Sources */,
+				E8F36B531F447E42002F8588 /* SMJNullHandlingTest.m in Sources */,
+				E8D285C31F3A2AA900B38EE3 /* SMJFilter.m in Sources */,
+				E8D285A91F3A2AA900B38EE3 /* SMJArrayIndexOperation.m in Sources */,
+				E82104EC1F427D9F0001359C /* SMJOptionsTest.m in Sources */,
+				E8FF3DD01F3FC79B00C3DB2C /* SMJFilterCompilerTest.m in Sources */,
+				E8D2854B1F3A29B000B38EE3 /* SMJDeepScanTest.m in Sources */,
+				E8D285611F3A2A2A00B38EE3 /* SMJConfiguration.m in Sources */,
+				E8D285E51F3A2AA900B38EE3 /* SMJPredicatePathToken.m in Sources */,
+				E82104D81F41ED4A0001359C /* SMJIssue234.m in Sources */,
+				E8220EA11F43ACDF00E7D00C /* SMJArraySlicingTest.m in Sources */,
+				E8FF3DD21F3FD58C00C3DB2C /* SMJFilterParseTest.m in Sources */,
+				E8D285EB1F3A2AA900B38EE3 /* SMJRelationalExpressionNode.m in Sources */,
+				E81686411F41277B00B38278 /* SMJRegexpEvaluatorTest.m in Sources */,
+				E8D285651F3A2A2A00B38EE3 /* SMJJSONPath.m in Sources */,
+				E8FF3DD41F3FD89700C3DB2C /* SMJFilterTest.m in Sources */,
+				E8D285B21F3A2AA900B38EE3 /* SMJCharacterIndex.m in Sources */,
+				E8A2891B1F4339A600D8FFA1 /* SMJPathCompilerTest.m in Sources */,
+				E8D285DA1F3A2AA900B38EE3 /* SMJPathRef.m in Sources */,
+				E8D285E81F3A2AA900B38EE3 /* SMJPropertyPathToken.m in Sources */,
+				E816863C1F40F1BA00B38278 /* SMJInlineFilterTest.m in Sources */,
+				E8D285BD1F3A2AA900B38EE3 /* SMJEvaluatorFactory.m in Sources */,
+				E8D285EE1F3A2AA900B38EE3 /* SMJRelationalOperator.m in Sources */,
+				E82104DD1F4255960001359C /* SMJJSONEntityPathFunctionTest.m in Sources */,
+				E8D285E21F3A2AA900B38EE3 /* SMJPredicateContextImpl.m in Sources */,
+				E8873F541F4437E9008475D3 /* SMJIssuesTest.m in Sources */,
+				E8D285D21F3A2AA900B38EE3 /* SMJParameter.m in Sources */,
+				E8D285B51F3A2AA900B38EE3 /* SMJCompiledPath.m in Sources */,
+				E8D285AF1F3A2AA900B38EE3 /* SMJArraySliceOperation.m in Sources */,
+				E8A2891D1F435DC600D8FFA1 /* SMJReturnTypeTest.m in Sources */,
+				E8A301591F3E7E210025FE8E /* SMJEvaluationListenerTest.m in Sources */,
+				E8D285D61F3A2AA900B38EE3 /* SMJPathCompiler.m in Sources */,
+				E8F36B511F447690002F8588 /* SMJJsonPathTest.m in Sources */,
+				E8D285C01F3A2AA900B38EE3 /* SMJExpressionNode.m in Sources */,
+				E8D285CF1F3A2AA900B38EE3 /* SMJLogicalOperator.m in Sources */,
+				E8220EA21F43ACDF00E7D00C /* SMJComplianceTest.m in Sources */,
+				E8D285F41F3A2AA900B38EE3 /* SMJScanPathToken.m in Sources */,
+				E8D285FA1F3A2AA900B38EE3 /* SMJValueNode.m in Sources */,
+				E82104DA1F4202E50001359C /* SMJBaseFunctionTest.m in Sources */,
+				E8A2891F1F43600000D8FFA1 /* SMJWriteTest.m in Sources */,
+				E8850C6E1F44CAD800E4FB36 /* SMJIssue191.m in Sources */,
+				E8F266D81F43AF4A0063EB0C /* SMJArrayPathTokenTest.m in Sources */,
+				E8D285AC1F3A2AA900B38EE3 /* SMJArrayPathToken.m in Sources */,
+				E8FF3DCE1F3FBE1B00C3DB2C /* SMJUseCaseUUIDTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E8D2854E1F3A29B000B38EE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E8D2854F1F3A29B000B38EE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E8D285511F3A29B000B38EE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SMJJSONPath/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sourcemac.SMJJSONPath;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E8D285521F3A29B000B38EE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SMJJSONPath/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sourcemac.SMJJSONPath;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E8D285541F3A29B000B38EE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SMJJSONPathTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sourcemac.SMJJSONPathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E8D285551F3A29B000B38EE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SMJJSONPathTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sourcemac.SMJJSONPathTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8D285361F3A29B000B38EE3 /* Build configuration list for PBXProject "SMJJSONPath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D2854E1F3A29B000B38EE3 /* Debug */,
+				E8D2854F1F3A29B000B38EE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8D285501F3A29B000B38EE3 /* Build configuration list for PBXNativeTarget "SMJJSONPath" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D285511F3A29B000B38EE3 /* Debug */,
+				E8D285521F3A29B000B38EE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8D285531F3A29B000B38EE3 /* Build configuration list for PBXNativeTarget "SMJJSONPathTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D285541F3A29B000B38EE3 /* Debug */,
+				E8D285551F3A29B000B38EE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8D285331F3A29B000B38EE3 /* Project object */;
+}
