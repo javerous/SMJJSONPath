@@ -1,0 +1,25 @@
+[
+  {
+    "items" : [
+      {
+        "name" : "it is the first name",
+        "uuid" : "FBECEBAF-8C62-4564-88E0-EEEA9F232459"
+      },
+      {
+        "name" : "it is the second name",
+        "uuid" : "F5EEB425-1B51-4AFE-92A6-0D8688AD3074"
+      }
+    ],
+    "uuid" : "8A9DEB2-D822-479D-AEF6-54A4F3FF128B"
+  },
+  
+  {
+    "items" : [
+      {
+        "name" : "it is another name",
+        "uuid" : "C3791FBE-690B-4104-8E48-E0961BB3C5F6"
+      }
+    ],
+    "uuid" : "A101C1BC-C2AB-4E34-818B-AA5465EA0D90"
+  }
+]
