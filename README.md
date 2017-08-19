@@ -3,7 +3,7 @@
 SMJJSONPath
 ===========
 
-SMJJSONPath is a complete JSONPath implementation written in Objective-C. It's a wide adaptation of [`jayway`](https://github.com/json-path/JsonPath) implementation.
+SMJJSONPath is a complete JSONPath implementation written in Objective-C. It's a wide adaptation of [`Jayway JsonPath`](https://github.com/json-path/JsonPath) implementation.
 
 
 ## Overview
@@ -14,18 +14,19 @@ It supports a wide bunch of functionalities:
 - functions
 - nesting
 
-You can take a look the `jayway` documentation for more information.
+You can take a look to the `Jayway JsonPath` documentation for more information.
 
 
 ## Adaptation
 
-This implementation is a tight  adaptation of `jayway`. It respects the original structure and naming, as much as possible. The changes are mainly to be more Objective-C stylized (named parameters, use NSError instead of try-catch-exception, etc.).
+This implementation is a tight  adaptation of `Jayway JsonPath`. It respects the original structure and naming, as much as possible. The changes are mainly to be more Objective-C stylized (named parameters, use NSError instead of try-catch-exception, etc.).
 
 This tight adaptation was done for different reasons:
 - If I wanted to structure something from my own view, I would have started from scratch, and I wouldn't have done it at all : this is a big bunch of code, tests and reflexion to do, more than I want to give to that.
-- The `jayway` project have a pretty good and complete implementation (with some cleaning here and there to do, which are already documented by original developers). It's a good reference, from my point of view.
-- I want to facilitate cherry-picking updates from `jayway` to include them right here.
+- The `Jayway JsonPath` project have a pretty good and complete implementation (with some cleaning here and there to do, which are already documented by original developers). It's a good reference, from my point of view.
+- I want to facilitate cherry-picking updates from `Jayway JsonPath` to include them right here.
 
+This code is currently based on commit [c187488](https://github.com/json-path/JsonPath/commit/c1874886c1f69fada6dedccebb6d72241dcd0c97).
 
 ## Query
 
@@ -65,7 +66,3 @@ id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadi
 
 // The queried path was deleted in jsonObject.
 ```
-
-## Sync
-
-This code is currently based on commit [c187488](https://github.com/json-path/JsonPath/commit/c1874886c1f69fada6dedccebb6d72241dcd0c97).
