@@ -125,7 +125,7 @@ NS_ASSUME_NONNULL_BEGIN
 		}
 		else
 		{
-			NSString *m = (jsonObject == nil ? @"null" : [jsonObject className]);
+			NSString *m = (jsonObject == nil ? @"null" : [[jsonObject class] description]);
 			
 			SMSetError(error, 1, @"Expected to find an object with property %@ in path %@ but found '%@'. This is not a json object.", self.pathFragment, currentPath, m);
 			

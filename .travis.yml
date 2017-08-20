@@ -2,4 +2,4 @@ language: objective-c
 osx_image: xcode8.3
 
 script:
-    - xcodebuild clean build test -project SMJJSONPath.xcodeproj -scheme SMJJSONPath CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+    - xcodebuild clean build test -project SMJJSONPath.xcodeproj -scheme 'SMJJSONPath - macOS' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO

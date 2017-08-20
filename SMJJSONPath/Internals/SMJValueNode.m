@@ -370,7 +370,7 @@ NS_ASSUME_NONNULL_BEGIN
 		}
 		else
 		{
-			SMSetError(error, 1, @"Could not convert %@ to a ValueNode", [object className]);
+			SMSetError(error, 1, @"Could not convert %@ to a ValueNode", [object class]);
 			return nil;
 		}
 	}
