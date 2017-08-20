@@ -229,7 +229,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	NSArray *obj = jsonObject;
 	
-	NSString 	*evalPath = [SMJUtils stringByConcatenatingStrings:@[ currentPath, @"[", [NSString stringWithFormat:@"%ld", index], @"]" ]];
+	NSString 	*evalPath = [SMJUtils stringByConcatenatingStrings:@[ currentPath, @"[", [NSString stringWithFormat:@"%ld", (long)index], @"]" ]];
 	SMJPathRef	*pathRef = context.forUpdate ? [SMJPathRef pathRefWithObject:jsonObject item:obj[index]] : [SMJPathRef pathRefNull];
 	
 	NSInteger effectiveIndex = index < 0 ? obj.count + index : index;

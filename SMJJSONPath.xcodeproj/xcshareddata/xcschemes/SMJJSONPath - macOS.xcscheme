@@ -16,21 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
                BuildableName = "SMJJSONPath.framework"
-               BlueprintName = "SMJJSONPath"
-               ReferencedContainer = "container:SMJJSONPath.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8D285441F3A29B000B38EE3"
-               BuildableName = "SMJJSONPathTests.xctest"
-               BlueprintName = "SMJJSONPathTests"
+               BlueprintName = "SMJJSONPath - macOS"
                ReferencedContainer = "container:SMJJSONPath.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
@@ -59,7 +44,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
             BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath"
+            BlueprintName = "SMJJSONPath - macOS"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -70,7 +55,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -82,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
             BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath"
+            BlueprintName = "SMJJSONPath - macOS"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -100,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
             BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath"
+            BlueprintName = "SMJJSONPath - macOS"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

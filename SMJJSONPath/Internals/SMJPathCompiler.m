@@ -205,7 +205,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	if (_path.currentCharacter != kPeriodChar && _path .currentCharacter != kOpenSquareBracketChar)
 	{
-		SMSetError(error, 2, @"Illegal character at position %ld expected '.' or '[", _path.position);
+		SMSetError(error, 2, @"Illegal character at position %ld expected '.' or '[", (long)_path.position);
 		return nil;
 	}
 	
@@ -239,7 +239,7 @@ NS_ASSUME_NONNULL_BEGIN
 			if (result)
 				return YES;
 			
-			SMSetError(error, 1, @"Could not parse token starting at position %ld . Expected ?, ', 0-9, * ", _path .position);
+			SMSetError(error, 1, @"Could not parse token starting at position %ld . Expected ?, ', 0-9, * ", (long)_path .position);
 			return NO;
 		}
 			
@@ -252,7 +252,7 @@ NS_ASSUME_NONNULL_BEGIN
 			if (result)
 				return YES;
 			
-			SMSetError(error, 2, @"Could not parse token starting at position %ld", _path.position);
+			SMSetError(error, 2, @"Could not parse token starting at position %ld", (long)_path.position);
 			return NO;
 		}
 			
@@ -265,7 +265,7 @@ NS_ASSUME_NONNULL_BEGIN
 			if (result)
 				return YES;
 			
-			SMSetError(error, 3, @"Could not parse token starting at position %ld", _path.position);
+			SMSetError(error, 3, @"Could not parse token starting at position %ld", (long)_path.position);
 			return NO;
 		}
 			
@@ -278,7 +278,7 @@ NS_ASSUME_NONNULL_BEGIN
 			if (result)
 				return YES;
 			
-			SMSetError(error, 4, @"Could not parse token starting at position %ld", _path.position);
+			SMSetError(error, 4, @"Could not parse token starting at position %ld", (long)_path.position);
 			return NO;
 		}
 	}
@@ -307,7 +307,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	if ([_path currentCharacterIsEqualTo:kPeriodChar])
 	{
-		SMSetError(error, 1, @"Character '.' on position  %ld is not valid.", _path.position);
+		SMSetError(error, 1, @"Character '.' on position  %ld is not valid.", (long)_path.position);
 		return NO;
 	}
 	
@@ -335,7 +335,7 @@ NS_ASSUME_NONNULL_BEGIN
 		
 		if (c == kSpaceChar)
 		{
-			SMSetError(error, 1, @"Use bracket notion ['my prop'] if your property contains blank characters. position: %ld", readPosition);
+			SMSetError(error, 1, @"Use bracket notion ['my prop'] if your property contains blank characters. position: %ld", (long)readPosition);
 			return NO;
 		}
 		else if (c == kPeriodChar || c == kOpenSquareBracketChar)
@@ -480,7 +480,7 @@ NS_ASSUME_NONNULL_BEGIN
 				{
 					if (groupQuote == 0)
 					{
-						SMSetError(error, 1, @"Unexpected quote '\"' at character position: %ld", _path.position);
+						SMSetError(error, 1, @"Unexpected quote '\"' at character position: %ld", (long)_path.position);
 						return nil;
 					}
 					
@@ -516,7 +516,7 @@ NS_ASSUME_NONNULL_BEGIN
 			{
 				if (groupBrace == 0)
 				{
-					SMSetError(error, 2, @"Unexpected close brace '}' at character position: %ld", _path.position);
+					SMSetError(error, 2, @"Unexpected close brace '}' at character position: %ld", (long)_path.position);
 					return nil;
 				}
 				groupBrace--;
@@ -527,7 +527,7 @@ NS_ASSUME_NONNULL_BEGIN
 			{
 				if (groupBracket == 0)
 				{
-					SMSetError(error, 3, @"Unexpected close bracket ']' at character position: %ld", _path.position);
+					SMSetError(error, 3, @"Unexpected close bracket ']' at character position: %ld", (long)_path.position);
 					return nil;
 				}
 				groupBracket--;
@@ -685,7 +685,7 @@ NS_ASSUME_NONNULL_BEGIN
 		
 		if (![_path nextSignificantCharacterIsEqualTo:kCloseSquareBracketChar fromIndex:wildCardIndex])
 		{
-			SMSetError(error, 4, @"Expected wildcard token to end with ']' on position %ld", wildCardIndex + 1);
+			SMSetError(error, 4, @"Expected wildcard token to end with ']' on position %ld", (long)wildCardIndex + 1);
 			return NO;
 		}
 		
@@ -806,7 +806,7 @@ NS_ASSUME_NONNULL_BEGIN
 		{
 			if (lastSignificantWasComma)
 			{
-				SMSetError(error, 1, @"Found empty property at index %ld", readPosition);
+				SMSetError(error, 1, @"Found empty property at index %ld", (long)readPosition);
 				return NO;
 			}
 			break;
@@ -819,7 +819,7 @@ NS_ASSUME_NONNULL_BEGIN
 				
 				if (nextSignificantChar != kCloseSquareBracketChar && nextSignificantChar != kCommaChar)
 				{
-					SMSetError(error, 2, @"Property must be separated by comma or Property must be terminated close square bracket at index %ld", readPosition);
+					SMSetError(error, 2, @"Property must be separated by comma or Property must be terminated close square bracket at index %ld", (long)readPosition);
 					return NO;
 				}
 				
@@ -842,7 +842,7 @@ NS_ASSUME_NONNULL_BEGIN
 		{
 			if (lastSignificantWasComma)
 			{
-				SMSetError(error, 2, @"Found empty property at index %ld", readPosition);
+				SMSetError(error, 2, @"Found empty property at index %ld", (long)readPosition);
 				return NO;
 			}
 			

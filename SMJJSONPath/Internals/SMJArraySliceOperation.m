@@ -107,9 +107,9 @@ NS_ASSUME_NONNULL_BEGIN
 	NSMutableString *sb = [NSMutableString string];
 	
 	[sb appendString:@"["];
-	[sb appendString:(_fromIndex == NSNotFound ? @"" : [NSString stringWithFormat:@"%ld", _fromIndex])];
+	[sb appendString:(_fromIndex == NSNotFound ? @"" : [NSString stringWithFormat:@"%ld", (long)_fromIndex])];
 	[sb appendString:@":"];
-	[sb appendString:(_toIndex == NSNotFound ? @"" : [NSString stringWithFormat:@"%ld", _toIndex])];
+	[sb appendString:(_toIndex == NSNotFound ? @"" : [NSString stringWithFormat:@"%ld", (long)_toIndex])];
 	[sb appendString:@"]"];
 	
 	return sb;

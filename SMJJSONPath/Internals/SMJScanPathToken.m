@@ -126,7 +126,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 			for (id evalObject in jsonObject)
 			{
-				NSString *evalPath = [NSString stringWithFormat:@"%@[%lu]", currentPath, idx];
+				NSString *evalPath = [NSString stringWithFormat:@"%@[%lu]", currentPath, (unsigned long)idx];
 				SMJEvaluationStatus result = [next evaluateWithCurrentPath:evalPath parentPathRef:parent jsonObject:evalObject evaluationContext:context error:error];
 				
 				if (result == SMJEvaluationStatusError)
@@ -144,7 +144,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 	for (id evalObject in jsonObject)
 	{
-		NSString *evalPath = [NSString stringWithFormat:@"%@[%lu]", currentPath, idx];
+		NSString *evalPath = [NSString stringWithFormat:@"%@[%lu]", currentPath, (unsigned long)idx];
 		SMJEvaluationStatus result = [self walk:pt currentPath:evalPath parent:[SMJPathRef pathRefWithObject:jsonObject item:evalObject]  jsonObject:evalObject context:context predicate:predicate error:error];
 		
 		if (result == SMJEvaluationStatusError)
