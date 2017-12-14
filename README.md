@@ -61,7 +61,7 @@ SMJConfiguration *configuration = [SMJConfiguration defaultConfiguration];
 id jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
 
 // Update the json.
-[jsonPath updateJSONMutableObject:jsonObject deleteWithConfiguration:[SMJConfiguration defaultConfiguration] error:&error];
+[jsonPath updateJSONMutableObject:jsonObject deleteWithConfiguration:configuration error:&error];
 
 
 // The queried path was deleted in jsonObject.
