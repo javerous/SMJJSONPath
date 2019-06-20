@@ -452,6 +452,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /*
+** SMJFilterTest - ANYOF
+*/
+#pragma mark - SMJFilterTest - ANYOF
+
+- (void)test_array_anyof_evals
+{
+	[self checkApplyFilterString:@"[?(@.string-arr ANYOF [ \"a\", \"z\" ])]" expectedResult:YES];
+	[self checkApplyFilterString:@"[?(@.string-arr ANYOF [ \"z\", \"b\", \"a\" ])]" expectedResult:YES];
+	[self checkApplyFilterString:@"[?(@.string-arr ANYOF [ \"x\", \"y\", \"z\" ])]" expectedResult:NO];
+}
+
+
+/*
+** SMJFilterTest - NONEOF
+*/
+#pragma mark - SMJFilterTest - NONEOF
+
+- (void)test_array_noneof_evals
+{
+	[self checkApplyFilterString:@"[?(@.string-arr NONEOF [ \"a\", \"z\" ])]" expectedResult:NO];
+	[self checkApplyFilterString:@"[?(@.string-arr NONEOF [ \"z\", \"b\", \"a\" ])]" expectedResult:NO];
+	[self checkApplyFilterString:@"[?(@.string-arr NONEOF [ \"x\", \"y\", \"z\" ])]" expectedResult:YES];
+}
+
+
+/*
 ** SMJFilterTest - EXISTS
 */
 #pragma mark - SMJFilterTest - EXISTS

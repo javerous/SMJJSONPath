@@ -89,6 +89,8 @@ static struct {
 	//{ .name = (__bridge CFStringRef)SMJRelationalOperatorMATCHES },
 	{ .name = (__bridge CFStringRef)SMJRelationalOperatorEMPTY },
 	{ .name = (__bridge CFStringRef)SMJRelationalOperatorSUBSETOF },
+	{ .name = (__bridge CFStringRef)SMJRelationalOperatorANYOF },
+	{ .name = (__bridge CFStringRef)SMJRelationalOperatorNONEOF },
 };
 	
 

@@ -74,8 +74,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)testMultipleResultSetSums
 {
 	NSNumber *number = [self checkResultForJSONString:_jsonString jsonPathString:@"$.sum($..timestamp, $..cpus)" expectedError:NO];
-	
-	XCTAssertEqual(number.longValue, 35679716835);
+		
+	XCTAssertEqual(number.longValue, 35679716860);
 }
 
 - (void)testConcatResultSet
@@ -88,8 +88,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)testConcatWithNumericValueAsString
 {
 	NSString *concat = [self checkResultForJSONString:_jsonString jsonPathString:@"$.concat($..cpus)" expectedError:NO];
-	
-	XCTAssertEqual(concat.length, 668);
+
+	XCTAssertEqual(concat.length, 95);
 }
 
 @end

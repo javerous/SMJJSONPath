@@ -14,7 +14,7 @@
                     "id": "mesos-jenkins-172c6f74-12bc-44fe-849a-ad902ddc2b64",
                     "name": "task mesos-jenkins-172c6f74-12bc-44fe-849a-ad902ddc2b64",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -37,7 +37,7 @@
             "id": "20150225-172738-2049997834-5050-23289-0433",
             "name": "Jenkins Scheduler",
             "offered_resources": {
-                "cpus": -2.22044604925031e-16,
+                "cpus": -22,
                 "disk": 0,
                 "mem": 0
             },
@@ -45,7 +45,7 @@
             "registered_time": 1427207787.01579,
             "reregistered_time": 1427207787.0158,
             "resources": {
-                "cpus": -2.22044604925031e-16,
+                "cpus": -22,
                 "disk": 0,
                 "mem": 0
             },
@@ -70,7 +70,7 @@
                     "id": "mesos-jenkins-cd18b433-e2ee-4a4e-875b-6ea82d90a53a",
                     "name": "task mesos-jenkins-cd18b433-e2ee-4a4e-875b-6ea82d90a53a",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -93,7 +93,7 @@
                     "id": "mesos-jenkins-66fca7c0-88f7-4a1a-9796-a6de2e337b0a",
                     "name": "task mesos-jenkins-66fca7c0-88f7-4a1a-9796-a6de2e337b0a",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -116,14 +116,14 @@
             "id": "20150225-172748-1513192458-5050-6647-0000",
             "name": "Jenkins Scheduler",
             "offered_resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
             "offers": [],
             "registered_time": 1427208985.06716,
             "resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
@@ -148,7 +148,7 @@
                     "id": "mesos-jenkins-258ad47c-85bf-4fe0-b7c4-4f0cc70f2998",
                     "name": "task mesos-jenkins-258ad47c-85bf-4fe0-b7c4-4f0cc70f2998",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -171,14 +171,14 @@
             "id": "20150225-172748-1513192458-5050-6647-0001",
             "name": "Jenkins Scheduler",
             "offered_resources": {
-                "cpus": 2.22044604925031e-16,
+                "cpus": 2,
                 "disk": 0,
                 "mem": 0
             },
             "offers": [],
             "registered_time": 1427211125.06385,
             "resources": {
-                "cpus": 2.22044604925031e-16,
+                "cpus": 2,
                 "disk": 0,
                 "mem": 0
             },
@@ -203,7 +203,7 @@
                     "id": "mesos-jenkins-f30e5e34-2ef6-4993-9260-73ee3520c0a5",
                     "name": "task mesos-jenkins-f30e5e34-2ef6-4993-9260-73ee3520c0a5",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -258,7 +258,7 @@
                     "id": "mesos-jenkins-1fc0bbd8-f0ff-48cd-a7f7-24a9436ba6bc",
                     "name": "task mesos-jenkins-1fc0bbd8-f0ff-48cd-a7f7-24a9436ba6bc",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -281,14 +281,14 @@
             "id": "20150225-172748-1513192458-5050-6647-0003",
             "name": "Jenkins Scheduler",
             "offered_resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
             "offers": [],
             "registered_time": 1427215868.06173,
             "resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
@@ -313,7 +313,7 @@
                     "id": "mesos-jenkins-62b44026-843d-4813-a6a8-e95215250bb1",
                     "name": "task mesos-jenkins-62b44026-843d-4813-a6a8-e95215250bb1",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -336,14 +336,14 @@
             "id": "20150225-172748-1513192458-5050-6647-0004",
             "name": "Jenkins Scheduler",
             "offered_resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
             "offers": [],
             "registered_time": 1427222958.07464,
             "resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
@@ -368,7 +368,7 @@
                     "id": "mesos-jenkins-807b9b8a-3283-4e78-94e1-9dc17df4df77",
                     "name": "task mesos-jenkins-807b9b8a-3283-4e78-94e1-9dc17df4df77",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 704
                     },
@@ -391,14 +391,14 @@
             "id": "20150225-172748-1513192458-5050-6647-0005",
             "name": "Jenkins Scheduler",
             "offered_resources": {
-                "cpus": -2.22044604925031e-16,
+                "cpus": -2,
                 "disk": 0,
                 "mem": 0
             },
             "offers": [],
             "registered_time": 1427309345.18029,
             "resources": {
-                "cpus": -2.22044604925031e-16,
+                "cpus": -2,
                 "disk": 0,
                 "mem": 0
             },
@@ -459,7 +459,7 @@
             "id": "20150203-224144-2049997834-5050-8713-0000",
             "name": "chronos-2.2.0_mesos-0.20.0-SNAPSHOT",
             "offered_resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
@@ -467,7 +467,7 @@
             "registered_time": 1427207787.01469,
             "reregistered_time": 1427207787.0147,
             "resources": {
-                "cpus": -8.88178419700125e-16,
+                "cpus": -8,
                 "disk": 0,
                 "mem": 0
             },
@@ -492,7 +492,7 @@
                     "id": "test_dv_helloworld.95f49d05-c9bf-11e4-a1fc-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31000-31000]"
@@ -507,7 +507,7 @@
                     "id": "test_dv_helloworld.a40abda6-ca02-11e4-a1fc-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31000-31000]"
@@ -522,7 +522,7 @@
                     "id": "test_dv_helloworld.3946a287-ca67-11e4-a1fc-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31000-31000]"
@@ -537,7 +537,7 @@
                     "id": "test_dv_helloworld.fec0c74c-ce11-11e4-a1fc-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31000-31000]"
@@ -552,7 +552,7 @@
                     "id": "test_jenkins-master.33d4007e-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31561-31561]"
@@ -567,7 +567,7 @@
                     "id": "test_jenkins-master.359deb0f-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31939-31939]"
@@ -582,7 +582,7 @@
                     "id": "test_jenkins-master.50773d6a-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31908-31908]"
@@ -597,7 +597,7 @@
                     "id": "test_jenkins-master.638fd9ce-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31658-31658]"
@@ -612,7 +612,7 @@
                     "id": "test_jenkins-master.81fd2852-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31160-31160]"
@@ -627,7 +627,7 @@
                     "id": "test_jenkins-master.afedb77b-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31185-31185]"
@@ -642,7 +642,7 @@
                     "id": "test_jenkins-master.0243c011-cf38-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31554-31554]"
@@ -657,7 +657,7 @@
                     "id": "test_dv_helloworld.4bdb1099-d1de-11e4-a1fc-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31000-31000]"
@@ -672,7 +672,7 @@
                     "id": "sdp_shared_jenkins-master.eb8f2863-c9a2-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.shared.sdp",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31458-31458]"
@@ -687,7 +687,7 @@
                     "id": "test_dv_helloworld.c7865efb-cd05-11e4-a1fc-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31000-31000]"
@@ -702,7 +702,7 @@
                     "id": "test_jenkins-master.37684ad0-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31223-31223]"
@@ -717,7 +717,7 @@
                     "id": "test_jenkins-master.3c2e3752-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31703-31703]"
@@ -732,7 +732,7 @@
                     "id": "test_jenkins-master.405b3f34-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31996-31996]"
@@ -747,7 +747,7 @@
                     "id": "test_jenkins-master.44886e26-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31141-31141]"
@@ -762,7 +762,7 @@
                     "id": "test_jenkins-master.54a4936b-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31109-31109]"
@@ -777,7 +777,7 @@
                     "id": "test_jenkins-master.58d1e96c-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31110-31110]"
@@ -792,7 +792,7 @@
                     "id": "test_jenkins-master.5d97fcfd-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31167-31167]"
@@ -807,7 +807,7 @@
                     "id": "test_jenkins-master.6986f34f-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31158-31158]"
@@ -822,7 +822,7 @@
                     "id": "test_jenkins-master.790a33f1-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31696-31696]"
@@ -837,7 +837,7 @@
                     "id": "test_jenkins-master.8c2149b3-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31258-31258]"
@@ -852,7 +852,7 @@
                     "id": "test_jenkins-master.9c3d47e4-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31308-31308]"
@@ -867,7 +867,7 @@
                     "id": "test_jenkins-master.a06a01a6-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31252-31252]"
@@ -882,7 +882,7 @@
                     "id": "test_jenkins-master.fa821fbd-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31111-31111]"
@@ -897,7 +897,7 @@
                     "id": "test_jenkins-master.fbb39ade-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31658-31658]"
@@ -912,7 +912,7 @@
                     "id": "test_jenkins-master.ffe0f0e0-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31022-31022]"
@@ -927,7 +927,7 @@
                     "id": "test_jenkins-master.04a68f42-cf38-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31583-31583]"
@@ -942,7 +942,7 @@
                     "id": "test_jenkins-master.4ce2cc09-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31449-31449]"
@@ -957,7 +957,7 @@
                     "id": "test_jenkins-master.a792e469-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31299-31299]"
@@ -972,7 +972,7 @@
                     "id": "test_jenkins-master.fe166a0f-cf37-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31383-31383]"
@@ -987,7 +987,7 @@
                     "id": "test_jenkins-master.0670c7f3-cf38-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.test",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31607-31607]"
@@ -1002,7 +1002,7 @@
                     "id": "test_dev_frontend.3950b432-d234-11e4-bc5e-56847afe9799",
                     "name": "frontend.dev.test",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 1024,
                         "ports": "[31980-31980, 31000-31002]"
@@ -1026,7 +1026,7 @@
                     "id": "test_dv_helloworld.c3a7d253-d241-11e4-bc5e-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31584-31584]"
@@ -1050,7 +1050,7 @@
                     "id": "test_dv_helloworld.d7c6b3c4-d244-11e4-bc5e-56847afe9799",
                     "name": "helloworld.dv.test",
                     "resources": {
-                        "cpus": 0.1,
+                        "cpus": 1,
                         "disk": 0,
                         "mem": 32,
                         "ports": "[31000-31000]"
@@ -1074,7 +1074,7 @@
                     "id": "test_dev_frontend.a0f3f185-d2e6-11e4-bc5e-56847afe9799",
                     "name": "frontend.dev.test",
                     "resources": {
-                        "cpus": 0.2,
+                        "cpus": 2,
                         "disk": 0,
                         "mem": 1024,
                         "ports": "[31980-31980, 31000-31002]"
@@ -1098,7 +1098,7 @@
             "id": "20150127-110351-1513192458-5050-8587-0000",
             "name": "marathon",
             "offered_resources": {
-                "cpus": -2.44249065417534e-15,
+                "cpus": -2,
                 "disk": 0,
                 "mem": 0
             },
@@ -1106,7 +1106,7 @@
             "registered_time": 1427207786.075,
             "reregistered_time": 1427289460.06666,
             "resources": {
-                "cpus": 0.299999999999998,
+                "cpus": 29,
                 "disk": 0,
                 "mem": 768,
                 "ports": "[31583-31583]"
@@ -1119,7 +1119,7 @@
                     "id": "sdp_shared_jenkins-master.ed596114-c9a2-11e4-a1fc-56847afe9799",
                     "name": "jenkins-master.shared.sdp",
                     "resources": {
-                        "cpus": 0.3,
+                        "cpus": 3,
                         "disk": 0,
                         "mem": 768,
                         "ports": "[31583-31583]"
@@ -1136,7 +1136,7 @@
             ],
             "unregistered_time": 0,
             "used_resources": {
-                "cpus": 0.3,
+                "cpus": 3,
                 "disk": 0,
                 "mem": 768,
                 "ports": "[31583-31583]"
