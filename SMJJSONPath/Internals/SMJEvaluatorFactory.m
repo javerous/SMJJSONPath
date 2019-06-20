@@ -473,9 +473,83 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 			return SMJEvaluatorEvaluateFalse;
 		
 		
+		// > Check subset-of.
 		for (id leftObject in leftArray)
 		{
 			if ([rightArray containsObject:leftObject] == NO)
+				return SMJEvaluatorEvaluateFalse;
+		}
+		
+		return SMJEvaluatorEvaluateTrue;
+	}];
+	
+	
+	// Any of.
+	map[SMJRelationalOperatorANYOF] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
+
+		if ([leftNode isKindOfClass:[SMJJsonNode class]] == NO || [rightNode isKindOfClass:[SMJJsonNode class]] == NO)
+			return SMJEvaluatorEvaluateFalse;
+		
+		// > Fetch right array.
+		NSArray *rightArray = [(SMJJsonNode *)rightNode underlayingObjectWithError:error];
+		
+		if (!rightArray)
+			return SMJEvaluatorEvaluateError;
+		
+		if ([rightArray isKindOfClass:[NSArray class]] == NO)
+			return SMJEvaluatorEvaluateFalse;
+		
+		
+		// > Fetch left array.
+		NSArray *leftArray = [(SMJJsonNode *)leftNode underlayingObjectWithError:error];
+		
+		if (!leftArray)
+			return SMJEvaluatorEvaluateError;
+		
+		if ([leftArray isKindOfClass:[NSArray class]] == NO)
+			return SMJEvaluatorEvaluateFalse;
+
+		
+		// > Check any-of.
+		for (id leftObject in leftArray)
+		{
+			if ([rightArray containsObject:leftObject])
+				return SMJEvaluatorEvaluateTrue;
+		}
+		
+		return SMJEvaluatorEvaluateFalse;
+	}];
+	
+	// None of.
+	map[SMJRelationalOperatorNONEOF] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
+
+		if ([leftNode isKindOfClass:[SMJJsonNode class]] == NO || [rightNode isKindOfClass:[SMJJsonNode class]] == NO)
+			return SMJEvaluatorEvaluateFalse;
+		
+		// > Fetch right array.
+		NSArray *rightArray = [(SMJJsonNode *)rightNode underlayingObjectWithError:error];
+		
+		if (!rightArray)
+			return SMJEvaluatorEvaluateError;
+		
+		if ([rightArray isKindOfClass:[NSArray class]] == NO)
+			return SMJEvaluatorEvaluateFalse;
+		
+		
+		// > Fetch left array.
+		NSArray *leftArray = [(SMJJsonNode *)leftNode underlayingObjectWithError:error];
+		
+		if (!leftArray)
+			return SMJEvaluatorEvaluateError;
+		
+		if ([leftArray isKindOfClass:[NSArray class]] == NO)
+			return SMJEvaluatorEvaluateFalse;
+		
+		
+		// > Check none-of.
+		for (id leftObject in leftArray)
+		{
+			if ([rightArray containsObject:leftObject])
 				return SMJEvaluatorEvaluateFalse;
 		}
 		

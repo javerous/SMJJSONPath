@@ -58,6 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
 //#define SMJRelationalOperatorMATCHES	@"MATCHES"
 #define SMJRelationalOperatorEMPTY		@"EMPTY"
 #define SMJRelationalOperatorSUBSETOF	@"SUBSETOF"
+#define SMJRelationalOperatorANYOF		@"ANYOF"
+#define SMJRelationalOperatorNONEOF		@"NONEOF"
 
 
 
