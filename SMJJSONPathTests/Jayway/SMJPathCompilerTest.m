@@ -1,7 +1,7 @@
 /*
  * SMJPathCompilerTest.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -246,6 +246,45 @@ NS_ASSUME_NONNULL_BEGIN
 	[self checkResultForJSONString:json jsonPathString:@"$.logs[?(@.x && @.y || @.id)]" expectedCount:1];
 }
 
+- (void)test_issue_predicate_can_have_double_quotes
+{
+	NSString *json = @"{\n"
+	"    \"logs\": [\n"
+	"        {\n"
+	"            \"message\": \"\\\"it\\\"\",\n"
+	"        }\n"
+	"    ]\n"
+	"}";
+	
+	[self checkResultForJSONString:json jsonPathString:@"$.logs[?(@.message == '\"it\"')].message" expectedResult:@[ @"\"it\"" ]];
+}
+
+- (void)test_issue_predicate_can_have_single_quotes
+{
+	NSString *json = @"{\n"
+	"    \"logs\": [\n"
+	"        {\n"
+	"            \"message\": \"'it'\",\n"
+	"        }\n"
+	"    ]\n"
+	"}";
+	
+	[self checkResultForJSONString:json jsonPathString:@"$.logs[?(@.message == \"'it'\")].message" expectedResult:@[ @"'it'" ]];
+}
+
+- (void)test_issue_predicate_can_have_single_quotes_escaped
+{
+	NSString *json = @"{\n"
+	"    \"logs\": [\n"
+	"        {\n"
+	"            \"message\": \"'it'\",\n"
+	"        }\n"
+	"    ]\n"
+	"}";
+	
+	[self checkResultForJSONString:json jsonPathString:@"$.logs[?(@.message == '\\'it\\'')].message" expectedResult:@[ @"'it'" ]];
+}
+
 - (void)test_issue_predicate_can_have_square_bracket_in_prop
 {
 	NSString *json  = @"{\n"
@@ -258,6 +297,14 @@ NS_ASSUME_NONNULL_BEGIN
 	"}";
 	
 	[self checkResultForJSONString:json jsonPathString:@"$.logs[?(@.message == '] it')].message" expectedResult:@[ @"] it" ]];
+}
+
+- (void)test_a_function_can_be_compiled
+{
+	XCTAssertEqualObjects([[SMJPathCompiler compilePathString:@"$.aaa.foo()" error:nil] stringValue], @"$['aaa'].foo()");
+	XCTAssertEqualObjects([[SMJPathCompiler compilePathString:@"$.aaa.foo(5)" error:nil] stringValue], @"$['aaa'].foo(...)");
+	XCTAssertEqualObjects([[SMJPathCompiler compilePathString:@"$.aaa.foo($.bar)" error:nil] stringValue], @"$['aaa'].foo(...)");
+	XCTAssertEqualObjects([[SMJPathCompiler compilePathString:@"$.aaa.foo(5,10,15)" error:nil] stringValue], @"$['aaa'].foo(...)");
 }
 
 - (void)test_array_indexes_must_be_separated_by_commas
@@ -300,4 +347,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 NS_ASSUME_NONNULL_END
-

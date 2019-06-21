@@ -1,5 +1,5 @@
 /*
- * SMJFilter.m
+ * SMJArraySliceToken.h
  *
  * Copyright 2019 Avérous Julien-Pierre
  *
@@ -17,33 +17,26 @@
  */
 
 
-/* Adapted from https://github.com/json-path/JsonPath/blob/master/json-path/src/main/java/com/jayway/jsonpath/Filter.java */
+/* Adapted from https://github.com/json-path/JsonPath/blob/master/json-path/src/main/java/com/jayway/jsonpath/internal/path/ArraySliceToken.java */
 
 
-#import "SMJFilter.h"
+#import <Foundation/Foundation.h>
+
+#import "SMJArrayPathToken.h"
+#import "SMJArraySliceOperation.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 /*
-** SMJFilter
+** SMJArraySliceToken
 */
-#pragma mark - SMJFilter
+#pragma mark - SMJArraySliceToken
 
-@implementation SMJFilter
+@interface SMJArraySliceToken : SMJArrayPathToken
 
-- (SMJPredicateApply)applyWithContext:(id <SMJPredicateContext>)context error:(NSError **)error
-{
-	NSAssert(NO, @"should be overwritten");
-	return NO;
-}
-
-- (NSString *)stringValue
-{
-	NSAssert(NO, @"should be overwritten");
-	return (NSString *)nil;
-}
+- (instancetype)initWithSliceOperation:(SMJArraySliceOperation *)sliceOperation;
 
 @end
 

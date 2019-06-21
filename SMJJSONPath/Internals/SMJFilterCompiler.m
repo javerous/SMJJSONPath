@@ -1,7 +1,7 @@
 /*
  * SMJFilterCompiler.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@
 #import "SMJCharacterIndex.h"
 
 #import "SMJLogicalOperator.h"
-#import "SMJValueNode.h"
+#import "SMJValueNodes.h"
 
 #import "SMJExpressionNode.h"
 #import "SMJLogicalExpressionNode.h"
@@ -224,7 +224,7 @@ NS_ASSUME_NONNULL_BEGIN
 		NSInteger	savepoint = _filter.position;
 		NSError		*lerror = nil;
 		
-		if ([_filter readSignificantString:SMJLogicalOperatorOR error:&lerror] == NO)
+		if ([_filter hasSignificantString:SMJLogicalOperatorOR] == NO)
 		{
 			[_filter setPosition:savepoint];
 			break;
@@ -260,7 +260,7 @@ NS_ASSUME_NONNULL_BEGIN
 		NSInteger	savepoint = _filter.position;
 		NSError		*lerror = nil;
 
-		if ([_filter readSignificantString:SMJLogicalOperatorAND error:&lerror] == NO)
+		if ([_filter hasSignificantString:SMJLogicalOperatorAND] == NO)
 		{
 			[_filter setPosition:savepoint];
 			break;
@@ -366,7 +366,7 @@ NS_ASSUME_NONNULL_BEGIN
 	SMJPathNode *pathNode = (SMJPathNode *)left;
 	
 	left = [pathNode copyWithExistsCheckAndShouldExists:pathNode.shouldExists];
-	right = pathNode.shouldExists ? [SMJValueNode valueNodeTRUE] : [SMJValueNode valueNodeFALSE];
+	right = pathNode.shouldExists ? [SMJValueNodes valueNodeTRUE] : [SMJValueNodes valueNodeFALSE];
 
 	operator = [SMJRelationalOperator relationalOperatorEXISTS];
 	
@@ -510,7 +510,7 @@ NS_ASSUME_NONNULL_BEGIN
 			
 			[_filter incrementPositionBy:nullValue.length];
 			
-			return [SMJValueNode nullNode];
+			return [SMJValueNodes nullNode];
 		}
 	}
 	
@@ -549,7 +549,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	//logger.trace("JsonLiteral from {} to {} -> [{}]", begin, filter.position(), json);
 	
-	return [SMJValueNode jsonNodeWithString:json];
+	return [SMJValueNodes jsonNodeWithString:json];
 }
 
 - (nullable SMJPatternNode *)readPatternWithError:(NSError **)error
@@ -564,9 +564,13 @@ NS_ASSUME_NONNULL_BEGIN
 	}
 	else
 	{
-		if ([_filter isInBoundsIndex:closingIndex + 1] && ([_filter characterAtIndex:closingIndex + 1] == kIgnoreCaseChar))
+		if ([_filter isInBoundsIndex:closingIndex + 1])
 		{
-			closingIndex++;
+			NSInteger equalSignIndex = [_filter nextIndexOfCharacter:'='];
+			NSInteger endIndex = (equalSignIndex != NSNotFound ? equalSignIndex : [_filter nextIndexOfUnescapedCharacter:kCloseParenthesisChar]);
+			NSString *flags = [_filter stringFromIndex:closingIndex + 1 toIndex:endIndex];
+			
+			closingIndex += flags.length;
 		}
 		
 		[_filter setPosition:closingIndex + 1];
@@ -576,7 +580,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	//logger.trace("PatternNode from {} to {} -> [{}]", begin, filter.position(), pattern);
 	
-	return [SMJValueNode patternNodeWithString:pattern];
+	return [SMJValueNodes patternNodeWithString:pattern];
 }
 
 - (nullable SMJStringNode *)readStringLiteral:(unichar)endChar withError:(NSError **)error
@@ -599,7 +603,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	//logger.trace("StringLiteral from {} to {} -> [{}]", begin, filter.position(), stringLiteral);
 	
-	return [SMJValueNode stringNodeWithString:stringLiteral escape:YES];
+	return [SMJValueNodes stringNodeWithString:stringLiteral escape:YES];
 }
 
 
@@ -616,7 +620,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	//logger.trace("NumberLiteral from {} to {} -> [{}]", begin, filter.position(), numberLiteral);
 	
-	return [SMJValueNode numberNodeWithString:numberLiteral];
+	return [SMJValueNodes numberNodeWithString:numberLiteral];
 }
 
 - (nullable SMJBooleanNode *)readBooleanLiteralWithError:(NSError **)error
@@ -642,7 +646,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	//logger.trace("BooleanLiteral from {} to {} -> [{}]", begin, end, boolValue);
 	
-	return [SMJValueNode booleanNodeWithString:boolValue];
+	return [SMJValueNodes booleanNodeWithString:boolValue];
 }
 
 
@@ -686,7 +690,7 @@ NS_ASSUME_NONNULL_BEGIN
 	BOOL		shouldExists = !(previousSignificantChar == kNotChar);
 	NSString	*path = [_filter stringFromIndex:begin toIndex:_filter.position];
 	
-	return [SMJValueNode pathNodeWithPathString:path existsCheck:NO shouldExists:shouldExists error:error];
+	return [SMJValueNodes pathNodeWithPathString:path existsCheck:NO shouldExists:shouldExists error:error];
 }
 
 
@@ -804,4 +808,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 NS_ASSUME_NONNULL_END
-

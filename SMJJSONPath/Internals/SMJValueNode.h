@@ -1,7 +1,7 @@
 /*
  * SMJValueNode.h
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,26 +22,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "SMJPredicate.h"
-
-#import "SMJPath.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
-
-
-/*
-** Forward
-*/
-#pragma mark - Forward
-
-@class SMJPathNode;
-@class SMJNullNode;
-@class SMJJsonNode;
-@class SMJPatternNode;
-@class SMJStringNode;
-@class SMJNumberNode;
-@class SMJBooleanNode;
 
 
 /*
@@ -64,18 +46,6 @@ typedef enum SMJComparisonResult {
 
 @interface SMJValueNode : NSObject
 
-+ (SMJBooleanNode *)valueNodeTRUE;
-+ (SMJBooleanNode *)valueNodeFALSE;
-
-+ (SMJNullNode *)nullNode;
-+ (SMJJsonNode *)jsonNodeWithString:(NSString *)string;
-+ (SMJPatternNode *)patternNodeWithString:(NSString *)string;
-+ (SMJStringNode *)stringNodeWithString:(NSString *)string escape:(BOOL)escape;
-+ (SMJNumberNode *)numberNodeWithString:(NSString *)string;
-+ (SMJBooleanNode *)booleanNodeWithString:(NSString *)string;
-+ (SMJPathNode *)pathNodeWithPath:(id <SMJPath>)path;
-+ (nullable SMJPathNode *)pathNodeWithPathString:(NSString *)pathString existsCheck:(BOOL)existsCheck shouldExists:(BOOL)shouldExists error:(NSError **)error;
-
 - (NSString *)stringValue;
 - (nullable NSString *)literalValue;
 
@@ -89,83 +59,4 @@ typedef enum SMJComparisonResult {
 @end
 
 
-
-/*
-** Subnodes
-*/
-#pragma mark - Subnodes
-
-@interface SMJPathNode : SMJValueNode
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (instancetype)copyWithExistsCheckAndShouldExists:(BOOL)existsCheck;
-
-@property (readonly) BOOL shouldExists;
-@property (readonly, getter=isExistsCheck) BOOL existsCheck;
-
-- (nullable SMJValueNode *)evaluate:(id <SMJPredicateContext>)context error:(NSError **)error;
-
-- (id <SMJPath>)underlayingObjectWithError:(NSError **)error;
-
-@end
-
-
-@interface SMJNullNode : SMJValueNode
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (NSNull *)underlayingObjectWithError:(NSError **)error;
-
-@end
-
-
-@interface SMJJsonNode : SMJValueNode
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (nullable id)underlayingObjectWithError:(NSError **)error;
-
-@end
-
-
-@interface SMJPatternNode : SMJValueNode
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (NSRegularExpression *)underlayingObjectWithError:(NSError **)error;
-
-@end
-
-
-@interface SMJStringNode : SMJValueNode
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (NSString *)underlayingObjectWithError:(NSError **)error;
-
-@end
-
-
-@interface SMJNumberNode : SMJValueNode
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (NSNumber *)underlayingObjectWithError:(NSError **)error;
-
-@end
-
-
-@interface SMJBooleanNode : SMJValueNode
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (NSNumber *)underlayingObjectWithError:(NSError **)error;
-
-@end
-
-
 NS_ASSUME_NONNULL_END
-
-
-

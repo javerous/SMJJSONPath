@@ -1,7 +1,7 @@
 /*
  * SMJParameter.h
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,4 +81,3 @@ typedef id _Nullable (^SMJParamLateBinding)(SMJParameter *parameter, NSError **e
 
 
 NS_ASSUME_NONNULL_END
-

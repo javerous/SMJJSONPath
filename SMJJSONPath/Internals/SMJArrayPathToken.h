@@ -1,7 +1,7 @@
 /*
  * SMJArrayPathToken.h
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,11 +24,21 @@
 
 #import "SMJPathToken.h"
 
-#import "SMJArraySliceOperation.h"
-#import "SMJArrayIndexOperation.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
+
+
+/*
+** Types
+*/
+#pragma mark - Types
+
+typedef enum SMJArrayPathCheck
+{
+	SMJArrayPathCheckHandle,
+	SMJArrayPathCheckSkip,
+	SMJArrayPathCheckError
+} SMJArrayPathCheck;
 
 
 /*
@@ -38,12 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SMJArrayPathToken : SMJPathToken
 
-// -- Instance --
-- (instancetype)initWithSliceOperation:(SMJArraySliceOperation *)sliceOperation;
-- (instancetype)initWithIndexOperation:(SMJArrayIndexOperation *)indexOperation;
+- (SMJArrayPathCheck)checkArrayWithCurrentPathString:(NSString *)currentPath jsonObject:(id)jsonObject evaluationContext:(SMJEvaluationContextImpl *)context error:(NSError **)error;
 
 @end
 
 
 NS_ASSUME_NONNULL_END
-

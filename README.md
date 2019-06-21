@@ -26,7 +26,7 @@ This tight adaptation was done for different reasons:
 - The `Jayway JsonPath` project have a pretty good and complete implementation (with some cleaning here and there to do, which are already documented by original developers). It's a good reference, from my point of view.
 - I want to facilitate cherry-picking updates from `Jayway JsonPath` to include them right here.
 
-This code is currently based on commit [c187488](https://github.com/json-path/JsonPath/commit/c1874886c1f69fada6dedccebb6d72241dcd0c97).
+This code is currently in sync with the source code in commit [00cfce3](https://github.com/json-path/JsonPath/commit/00cfce33412f57884ea8f2a4e06860a6f8ea970e).
 
 ## Query
 

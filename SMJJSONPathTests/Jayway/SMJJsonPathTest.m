@@ -1,7 +1,7 @@
 /*
  * SMJJsonPathTest.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -289,6 +289,12 @@ NS_ASSUME_NONNULL_BEGIN
 {
 	[self checkResultForJSONString:_jsonDocument jsonPathString:@"$..[?(@.bicycle.color)]" expectedCount:1];
 	[self checkResultForJSONString:_jsonDocument jsonPathString:@"$..[?(@.bicycle.numberOfGears)]" expectedCount:0];
+}
+
+- (void)test_prevent_stack_overflow_error_when_unclosed_property
+{
+	[self checkResultForJSONString:_jsonDocument jsonPathString:@"$['boo','foo][?(@ =~ /bar/)]" expectedError:YES];
+
 }
 
 @end

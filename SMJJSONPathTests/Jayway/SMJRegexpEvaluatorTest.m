@@ -1,7 +1,7 @@
 /*
  * SMJRegexpEvaluatorTest.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	// >
 	id <SMJPredicateContext>	context = [self predicateContextForJsonObject:@{}];
-	SMJValueNode				 *patternNode = [SMJValueNode patternNodeWithString:regexp];
+	SMJValueNode				 *patternNode = [SMJValueNodes patternNodeWithString:regexp];
 
 	SMJEvaluatorEvaluate evaluate = [evaluator evaluateLeftNode:patternNode rightNode:valueNode predicateContext:context error:&error];
 	
@@ -83,12 +83,47 @@ NS_ASSUME_NONNULL_BEGIN
 	SMJRootPathToken	*rootPathToken = [[SMJRootPathToken alloc] initWithRootToken:'$'];
 	SMJCompiledPath		*rootPath = [[SMJCompiledPath alloc] initWithRootPathToken:rootPathToken isRootPath:YES];
 	
-	[self checkRegexp:@"/true|false/" valueNode:[SMJValueNode stringNodeWithString:@"true" escape:YES] expectedResult:YES];
-	[self checkRegexp:@"/9.*9/" valueNode:[SMJValueNode numberNodeWithString:@"9979"] expectedResult:YES];
-	[self checkRegexp:@"/fa.*se/" valueNode:[SMJValueNode booleanNodeWithString:@"false"] expectedResult:YES];
-	[self checkRegexp:@"/JsonNode/" valueNode:[SMJValueNode jsonNodeWithString:@"{ 'some': 'JsonNode' }"] expectedResult:NO];
-	[self checkRegexp:@"/PathNode/" valueNode:[SMJValueNode pathNodeWithPath:rootPath] expectedResult:NO];
-	[self checkRegexp:@"/NullNode/" valueNode:[SMJValueNode nullNode] expectedResult:NO];
+	[self checkRegexp:@"/true|false/" valueNode:[SMJValueNodes stringNodeWithString:@"true" escape:YES] expectedResult:YES];
+	[self checkRegexp:@"/9.*9/" valueNode:[SMJValueNodes numberNodeWithString:@"9979"] expectedResult:YES];
+	[self checkRegexp:@"/fa.*se/" valueNode:[SMJValueNodes booleanNodeWithString:@"false"] expectedResult:YES];
+	[self checkRegexp:@"/JsonNode/" valueNode:[SMJValueNodes jsonNodeWithString:@"{ 'some': 'JsonNode' }"] expectedResult:NO];
+	[self checkRegexp:@"/PathNode/" valueNode:[SMJValueNodes pathNodeWithPath:rootPath] expectedResult:NO];
+	[self checkRegexp:@"/NullNode/" valueNode:[SMJValueNodes nullNode] expectedResult:NO];
+	
+	[self checkRegexp:@"/test/i" valueNode:[SMJValueNodes stringNodeWithString:@"tEsT" escape:YES] expectedResult:YES];
+	[self checkRegexp:@"/test/" valueNode:[SMJValueNodes stringNodeWithString:@"tEsT" escape:YES] expectedResult:NO];
+	[self checkRegexp:@"/\u00de/ui" valueNode:[SMJValueNodes stringNodeWithString:@"\u00fe" escape:YES] expectedResult:YES];
+	
+	// XXX we don't have this kind of unicode control on macOS (it's implicit and mandatory), so we can't test it's rejected without 'u' option.
+	[self checkRegexp:@"/\u00de/" valueNode:[SMJValueNodes stringNodeWithString:@"\u00fe" escape:YES] expectedResult:NO];
+	//[self checkRegexp:@"/\u00de/i" valueNode:[SMJValueNodes stringNodeWithString:@"\u00fe" escape:YES] expectedResult:NO];
+	
+	[self checkRegexp:@"/test# code/" valueNode:[SMJValueNodes stringNodeWithString:@"test" escape:YES] expectedResult:NO];
+	[self checkRegexp:@"/test# code/x" valueNode:[SMJValueNodes stringNodeWithString:@"test" escape:YES] expectedResult:YES];
+	
+	// XXX test from json-path do :
+	//  > "my\rtest" & "/.*test.*/d" -> true
+	//  > "my\rtest" & "/.*test.*/" -> false
+	// by default . doesn't match newline, so :
+	//  > with 'd', . can match \r but not \n
+	//  > without 'd', . can't match \r or \n
+	// but the * mean 0 or more, so even if . doesn't match a newline, the * ignore it
+	// the test are fixed by removing *
+	[self checkRegexp:@"/.test.*/d" valueNode:[SMJValueNodes stringNodeWithString:@"my\rtest" escape:YES] expectedResult:YES];
+	[self checkRegexp:@"/.test.*/" valueNode:[SMJValueNodes stringNodeWithString:@"my\rtest" escape:YES] expectedResult:NO];
+	
+	// XXX test from json-path do
+	//  > "test\ntest" & "/.*tEst.*/is" -> true
+	//  > "test\ntest" & "/.*tEst.*/i" -> false
+	// the problem is the same than the previous one : even if . doesn't match a new line, the * ignore it.
+	// the test are fixed by removing *
+	[self checkRegexp:@"/.tEst.*/is" valueNode:[SMJValueNodes stringNodeWithString:@"test\ntest" escape:YES] expectedResult:YES];
+	[self checkRegexp:@"/.tEst.*/i" valueNode:[SMJValueNodes stringNodeWithString:@"test\ntest" escape:YES] expectedResult:NO];
+	
+	// XXX we don't have this kind of unicode control on macOS (it's implicit and mandatory), so we can't test it's rejected without 'U' option.
+	[self checkRegexp:@"/^\\w+$/U" valueNode:[SMJValueNodes stringNodeWithString:@"\u00fe" escape:YES] expectedResult:YES];
+	//[self checkRegexp:@"/^\\w+$/" valueNode:[SMJValueNodes stringNodeWithString:@"\u00fe" escape:YES] expectedResult:NO];
+	[self checkRegexp:@"/^test$\\ntest$/m" valueNode:[SMJValueNodes stringNodeWithString:@"test\ntest" escape:YES] expectedResult:YES];
 }
 
 @end

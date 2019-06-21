@@ -1,7 +1,7 @@
 /*
  * SMJPredicatePathToken.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 			NSString *___message = [NSString stringWithFormat:(Message), ## __VA_ARGS__];\
 			*(Error) = [NSError errorWithDomain:@"SMJPredicatePathTokenErrorDomain" code:(Code) userInfo:@{ NSLocalizedDescriptionKey : ___message }]; \
 		} \
-	} while (0) \
+	} while (0)
 
 
 
