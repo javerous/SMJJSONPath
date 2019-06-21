@@ -1,5 +1,5 @@
 /*
- * SMJFilter.m
+ * SMJArrayIndexToken.h
  *
  * Copyright 2019 Avérous Julien-Pierre
  *
@@ -17,33 +17,26 @@
  */
 
 
-/* Adapted from https://github.com/json-path/JsonPath/blob/master/json-path/src/main/java/com/jayway/jsonpath/Filter.java */
+/* Adapted from https://github.com/json-path/JsonPath/blob/master/json-path/src/main/java/com/jayway/jsonpath/internal/path/ArrayIndexToken.java */
 
 
-#import "SMJFilter.h"
+#import <Foundation/Foundation.h>
+
+#import "SMJArrayPathToken.h"
+#import "SMJArrayIndexOperation.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 /*
-** SMJFilter
+** SMJArrayIndexToken
 */
-#pragma mark - SMJFilter
+#pragma mark - SMJArrayIndexToken
 
-@implementation SMJFilter
+@interface SMJArrayIndexToken : SMJArrayPathToken
 
-- (SMJPredicateApply)applyWithContext:(id <SMJPredicateContext>)context error:(NSError **)error
-{
-	NSAssert(NO, @"should be overwritten");
-	return NO;
-}
-
-- (NSString *)stringValue
-{
-	NSAssert(NO, @"should be overwritten");
-	return (NSString *)nil;
-}
+- (instancetype)initWithIndexOperation:(SMJArrayIndexOperation *)indexOperation;
 
 @end
 

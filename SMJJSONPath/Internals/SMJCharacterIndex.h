@@ -1,7 +1,7 @@
 /*
  * SMJCharacterIndex.h
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (unichar)nextSignificantCharacterFromIndex:(NSInteger)startPosition;
 
 - (BOOL)readSignificantCharacter:(unichar)c error:(NSError **)error;
-- (BOOL)readSignificantString:(NSString *)string error:(NSError **)error;
+- (BOOL)hasSignificantString:(NSString *)string;
 
 - (NSInteger)indexOfPreviousSignificantCharacter;
 - (NSInteger)indexOfPreviousSignificantCharacterFromIndex:(NSInteger)startPosition;

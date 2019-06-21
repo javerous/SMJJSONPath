@@ -1,7 +1,7 @@
 /*
  * SMJNestedFunctionTest.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,13 @@ NS_ASSUME_NONNULL_BEGIN
 	[self checkResultForJSONString:[self jsonNumberSeries] jsonPathString:@"$.sum(5, 3, $.numbers.max(), 2)" expectedResult:@20.0];
 }
 
+- (void)testSimpleLiteralArgument
+{
+	[self checkResultForJSONString:[self jsonNumberSeries] jsonPathString:@"$.sum(5)" expectedResult:@5.0];
+	[self checkResultForJSONString:[self jsonNumberSeries] jsonPathString:@"$.sum(50)" expectedResult:@50.0];
+
+}
+
 - (void)testStringConcat
 {
 	[self checkResultForJSONString:[self jsonTextSeries] jsonPathString:@"$.text.concat()" expectedResult:@"abcdef"];
@@ -111,5 +118,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 NS_ASSUME_NONNULL_END
-
-

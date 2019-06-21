@@ -1,7 +1,7 @@
 /*
  * SMJLogicalOperator.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /*
- ** Types
- */
+** Types
+*/
 #pragma mark - Types
 
 typedef enum SMJLogicalOperatorIndex

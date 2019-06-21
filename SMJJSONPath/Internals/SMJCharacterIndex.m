@@ -1,7 +1,7 @@
 /*
  * SMJCharacterIndex.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -308,7 +308,7 @@ NS_ASSUME_NONNULL_BEGIN
 		{
 			inEscape = TRUE;
 		}
-		else if (([self characterAtIndex:readPosition] == character) && !inEscape)
+		else if ([self characterAtIndex:readPosition] == character)
 		{
 			return readPosition;
 		}
@@ -373,21 +373,15 @@ NS_ASSUME_NONNULL_BEGIN
 	return YES;
 }
 
-- (BOOL)readSignificantString:(NSString *)string error:(NSError **)error
+- (BOOL)hasSignificantString:(NSString *)string
 {
 	[self skipBlanks];
 	
 	if (![self isInBoundsIndex:_position + string.length - 1])
-	{
-		SMSetError(error, 1, @"End of string reached while expecting: %@", string);
 		return NO;
-	}
 	
 	if (![[self stringFromIndex:_position toIndex:_position + string.length] isEqualToString:string])
-	{
-		SMSetError(error, 2, @"Expected: %@", string);
 		return NO;
-	}
 	
 	[self incrementPositionBy:string.length];
 	

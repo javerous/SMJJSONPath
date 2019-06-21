@@ -1,7 +1,7 @@
 /*
  * SMJPathCompiler.m
  *
- * Copyright 2017 Avérous Julien-Pierre
+ * Copyright 2019 Avérous Julien-Pierre
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,8 @@
 #import "SMJFunctionPathToken.h"
 #import "SMJPropertyPathToken.h"
 #import "SMJPredicatePathToken.h"
-#import "SMJArrayPathToken.h"
+#import "SMJArraySliceToken.h"
+#import "SMJArrayIndexToken.h"
 #import "SMJWildcardPathToken.h"
 
 
@@ -205,7 +206,7 @@ NS_ASSUME_NONNULL_BEGIN
 	
 	if (_path.currentCharacter != kPeriodChar && _path .currentCharacter != kOpenSquareBracketChar)
 	{
-		SMSetError(error, 2, @"Illegal character at position %ld expected '.' or '[", (long)_path.position);
+		SMSetError(error, 2, @"Illegal character at position %ld expected '.' or '['", (long)_path.position);
 		return nil;
 	}
 	
@@ -346,7 +347,7 @@ NS_ASSUME_NONNULL_BEGIN
 		else if (c == kOpenParenthesisChar)
 		{
 			isFunction = YES;
-			endPosition = readPosition++;
+			endPosition = readPosition;
 			break;
 		}
 		
@@ -746,7 +747,7 @@ NS_ASSUME_NONNULL_BEGIN
 		if (!arraySliceOperation)
 			return NO;
 		
-		[appender appendPathToken:[[SMJArrayPathToken alloc] initWithSliceOperation:arraySliceOperation]];
+		[appender appendPathToken:[[SMJArraySliceToken alloc] initWithSliceOperation:arraySliceOperation]];
 	}
 	else
 	{
@@ -755,7 +756,7 @@ NS_ASSUME_NONNULL_BEGIN
 		if (!arrayIndexOperation)
 			return NO;
 		
-		[appender appendPathToken:[[SMJArrayPathToken alloc] initWithIndexOperation:arrayIndexOperation]];
+		[appender appendPathToken:[[SMJArrayIndexToken alloc] initWithIndexOperation:arrayIndexOperation]];
 	}
 	
 	[_path setPosition:expressionEndIndex + 1];
@@ -813,7 +814,7 @@ NS_ASSUME_NONNULL_BEGIN
 		}
 		else if (c == potentialStringDelimiter)
 		{
-			if (inProperty && !inEscape)
+			if (inProperty)
 			{
 				unichar nextSignificantChar = [_path nextSignificantCharacterFromIndex:readPosition];
 				
@@ -852,6 +853,12 @@ NS_ASSUME_NONNULL_BEGIN
 		readPosition++;
 	}
 	
+	if (inProperty)
+	{
+		SMSetError(error, 2, @"Property has not been closed - missing closing %c", (char)potentialStringDelimiter);
+		return NO;
+	}
+	
 	NSInteger endBracketIndex = [_path indexOfNextSignificantCharacter:kCloseSquareBracketChar fromIndex:endPosition] + 1;
 	
 	[_path setPosition:endBracketIndex];
@@ -870,4 +877,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 NS_ASSUME_NONNULL_END
-
