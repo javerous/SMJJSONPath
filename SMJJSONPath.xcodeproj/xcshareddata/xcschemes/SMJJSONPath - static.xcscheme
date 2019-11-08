@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E877425B1F4926540049E6A5"
-               BuildableName = "SMJJSONPath.framework"
-               BlueprintName = "SMJJSONPath - iOS"
+               BlueprintIdentifier = "E880BD6C1FBB4ABF00C412F0"
+               BuildableName = "libsmjjsonpath.a"
+               BlueprintName = "SMJJSONPath - static"
                ReferencedContainer = "container:SMJJSONPath.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -27,15 +27,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E877425B1F4926540049E6A5"
-            BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath - iOS"
-            ReferencedContainer = "container:SMJJSONPath.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
       </Testables>
    </TestAction>
@@ -52,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E877425B1F4926540049E6A5"
-            BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath - iOS"
+            BlueprintIdentifier = "E880BD6C1FBB4ABF00C412F0"
+            BuildableName = "libsmjjsonpath.a"
+            BlueprintName = "SMJJSONPath - static"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -68,9 +59,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E877425B1F4926540049E6A5"
-            BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath - iOS"
+            BlueprintIdentifier = "E880BD6C1FBB4ABF00C412F0"
+            BuildableName = "libsmjjsonpath.a"
+            BlueprintName = "SMJJSONPath - static"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
