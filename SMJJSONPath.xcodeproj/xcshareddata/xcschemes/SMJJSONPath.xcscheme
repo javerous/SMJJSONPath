@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
                BuildableName = "SMJJSONPath.framework"
-               BlueprintName = "SMJJSONPath - macOS"
+               BlueprintName = "SMJJSONPath"
                ReferencedContainer = "container:SMJJSONPath.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,7 +32,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
             BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath - macOS"
+            BlueprintName = "SMJJSONPath"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,7 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
             BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath - macOS"
+            BlueprintName = "SMJJSONPath"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,7 +80,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E8D2853B1F3A29B000B38EE3"
             BuildableName = "SMJJSONPath.framework"
-            BlueprintName = "SMJJSONPath - macOS"
+            BlueprintName = "SMJJSONPath"
             ReferencedContainer = "container:SMJJSONPath.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
