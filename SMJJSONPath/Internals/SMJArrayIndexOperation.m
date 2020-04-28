@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 		NSScanner *scanner = [NSScanner scannerWithString:[token stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
 		NSInteger index = 0;
 		
-		if ([scanner scanInteger:&index] && scanner.atEnd)
+		if ([scanner scanInteger:&index] && scanner.isAtEnd)
 			[tempIndexes addObject:@(index)];
 		else
 		{

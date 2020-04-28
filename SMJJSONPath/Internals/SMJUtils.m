@@ -286,7 +286,9 @@ static NSString * hexadecimal(uint16_t value);
 + (nullable NSNumber *)numberWithString:(NSString *)string
 {
 	NSScanner *scanner;
- 
+
+#if TARGET_OS_OSX // scanUnsignedLongLong is not available in GNUstep yet
+
 	// Test unsigned long long int.
 	unsigned long long unsignedLongLong = 0;
 
@@ -294,10 +296,11 @@ static NSString * hexadecimal(uint16_t value);
 	
 	scanner.charactersToBeSkipped = [NSCharacterSet whitespaceCharacterSet];
 	
-	if ([scanner scanUnsignedLongLong:&unsignedLongLong] && scanner.atEnd)
+	if ([scanner scanUnsignedLongLong:&unsignedLongLong] && scanner.isAtEnd)
 		return @(unsignedLongLong);
-	
-	
+
+#endif /* TARGET_OS_OSX */
+
 	// Test signed long long int.
 	long long signedLongLong = 0;
 	
@@ -305,7 +308,7 @@ static NSString * hexadecimal(uint16_t value);
 
 	scanner.charactersToBeSkipped = [NSCharacterSet whitespaceCharacterSet];
 
-	if ([scanner scanLongLong:&signedLongLong] && scanner.atEnd)
+	if ([scanner scanLongLong:&signedLongLong] && scanner.isAtEnd)
 		return @(signedLongLong);
 
 	
@@ -317,7 +320,7 @@ static NSString * hexadecimal(uint16_t value);
 	scanner.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
 	scanner.charactersToBeSkipped = [NSCharacterSet whitespaceCharacterSet];
 	
-	if ([scanner scanDouble:&doubleValue] && scanner.atEnd)
+	if ([scanner scanDouble:&doubleValue] && scanner.isAtEnd)
 		return @(doubleValue);
 	
 	return nil;
