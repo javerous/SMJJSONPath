@@ -21,6 +21,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import <CoreFoundation/CFBase.h>
 
 
 NS_ASSUME_NONNULL_BEGIN

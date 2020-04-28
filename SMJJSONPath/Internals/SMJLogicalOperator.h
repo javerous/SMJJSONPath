@@ -21,6 +21,8 @@
 
 
 #import <Foundation/Foundation.h>
+#import <CoreFoundation/CFString.h>
+#import <dispatch/dispatch.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
