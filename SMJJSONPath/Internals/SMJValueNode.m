@@ -32,6 +32,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /*
+** Prototypes
+*/
+#pragma mark - Prototypes
+
+static SMJComparisonResult convertComparison(NSComparisonResult result);
+
+
+
+/*
 ** Macros
 */
 #pragma mark - Macros
@@ -69,16 +78,64 @@ NS_ASSUME_NONNULL_BEGIN
 	return nil;
 }
 
-- (BOOL)isEqual:(SMJValueNode *)node
+- (SMJEqualityResult)isEqual:(SMJValueNode *)node withError:(NSError **)error
 {
-	NSAssert(NO, @"need to be overwritten");
-	return NO;
+	if ([[self class] isEqual:[node class]] == NO)
+		return SMJEqualityDiffer;
+		
+	id obj1 = [self comparableUnderlayingObjectWithError:error];
+	id obj2 = [node comparableUnderlayingObjectWithError:error];
+	
+	if (!obj1 || !obj2)
+		return SMJEqualityError;
+	
+	return ([obj1 isEqual:obj2] ? SMJEqualitySame : SMJEqualityDiffer);
 }
 
-- (SMJComparisonResult)compare:(SMJValueNode *)node
+- (SMJComparisonResult)compare:(SMJValueNode *)node withError:(NSError **)error
 {
-	NSAssert(NO, @"need to be overwritten");
-	return SMJComparisonDiffer;
+	id obj1 = [self comparableUnderlayingObjectWithError:error];
+	id obj2 = [node comparableUnderlayingObjectWithError:error];
+	
+	if (!obj1 || !obj2)
+		return SMJComparisonError;
+
+	if ([obj1 isKindOfClass:[NSString class]] && [obj2 isKindOfClass:[NSString class]])
+	{
+		NSNumber *number1 = [SMJUtils numberWithString:obj1];
+		NSNumber *number2 = [SMJUtils numberWithString:obj2];
+
+		if (number1 && number2)
+			return convertComparison([number1 compare:number2]);
+		else
+			return convertComparison([(NSString *)obj1 compare:(NSString *)obj2]);
+	}
+	else if ([obj1 isKindOfClass:[NSString class]] && [obj2 isKindOfClass:[NSNumber class]])
+	{
+		NSNumber *number1 = [SMJUtils numberWithString:obj1];
+		
+		if (number1)
+			return convertComparison([number1 compare:(NSNumber *)obj2]);
+		else
+			return convertComparison([obj1 compare:[(NSNumber *)obj2 stringValue]]);
+	}
+	else if ([obj1 isKindOfClass:[NSNumber class]] && [obj2 isKindOfClass:[NSString class]])
+	{
+		NSNumber *number2 = [SMJUtils numberWithString:obj2];
+		
+		if (number2)
+			return convertComparison([(NSNumber *)obj1 compare:number2]);
+		else
+			return convertComparison([[(NSNumber *)obj1 stringValue] compare:obj2]);
+	}
+	else if ([obj1 isKindOfClass:[NSNumber class]] && [obj2 isKindOfClass:[NSNumber class]])
+	{
+		return convertComparison([(NSNumber *)obj1 compare:(NSNumber *)obj2]);
+	}
+	else
+	{
+		return ([obj1 isEqual:obj2] ? SMJComparisonSame : SMJComparisonDiffer);
+	}
 }
 
 - (nullable id)underlayingObjectWithError:(NSError **)error
@@ -87,7 +144,34 @@ NS_ASSUME_NONNULL_BEGIN
 	return nil;
 }
 
+- (nullable id)comparableUnderlayingObjectWithError:(NSError **)error
+{
+	return [self underlayingObjectWithError:error];
+}
+
 @end
+
+
+
+/*
+** C-Tools
+*/
+#pragma mark - C Tools
+
+static SMJComparisonResult convertComparison(NSComparisonResult result)
+{
+	switch (result)
+	{
+		case NSOrderedAscending:
+			return SMJComparisonDifferLessThan;
+			
+		case NSOrderedSame:
+			return SMJComparisonSame;
+			
+		case NSOrderedDescending:
+			return SMJComparisonDifferGreaterThan;
+	}
+}
 
 
 NS_ASSUME_NONNULL_END

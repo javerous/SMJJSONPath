@@ -31,11 +31,18 @@ NS_ASSUME_NONNULL_BEGIN
 */
 #pragma mark - Types
 
+typedef enum SMJEqualityResult {
+	SMJEqualitySame,
+	SMJEqualityDiffer,
+	SMJEqualityError,
+} SMJEqualityResult;
+
 typedef enum SMJComparisonResult {
 	SMJComparisonSame,
 	SMJComparisonDiffer,
 	SMJComparisonDifferGreaterThan,
-	SMJComparisonDifferLessThan
+	SMJComparisonDifferLessThan,
+	SMJComparisonError
 } SMJComparisonResult;
 
 
@@ -51,10 +58,11 @@ typedef enum SMJComparisonResult {
 
 - (NSString *)typeName;
 
-- (BOOL)isEqual:(SMJValueNode *)node;
-- (SMJComparisonResult)compare:(SMJValueNode *)node;
+- (SMJEqualityResult)isEqual:(SMJValueNode *)node withError:(NSError **)error;
+- (SMJComparisonResult)compare:(SMJValueNode *)node withError:(NSError **)error;
 
 - (nullable id)underlayingObjectWithError:(NSError **)error;
+- (nullable id)comparableUnderlayingObjectWithError:(NSError **)error;
 
 @end
 

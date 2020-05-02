@@ -139,61 +139,108 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 			return SMJEvaluatorEvaluateError;
 		}
 		
-		return SMBoolToEvaluateResult([leftNode isEqual:rightNode]);
+		SMJEqualityResult equality = [leftNode isEqual:rightNode withError:error];
+		
+		if (equality == SMJEqualityError)
+			return SMJEvaluatorEvaluateError;
+		
+		return SMBoolToEvaluateResult(equality == SMJEqualitySame);
 	}];
 	
 	
 	// Not Equals.
 	map[SMJRelationalOperatorNE] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
-		return SMBoolToEvaluateResult([leftNode compare:rightNode] != SMJComparisonSame);
+		
+		SMJComparisonResult comparison = [leftNode compare:rightNode withError:error];
+		
+		if (comparison == SMJComparisonError)
+			return SMJEvaluatorEvaluateError;
+		
+		return SMBoolToEvaluateResult(comparison != SMJComparisonSame);
 	}];
 	
 	
 	// Type Safe Not Equals.
 	map[SMJRelationalOperatorTSNE] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
-		return SMBoolToEvaluateResult([leftNode isEqual:rightNode] == NO);
+		
+		SMJEqualityResult equality = [leftNode isEqual:rightNode withError:error];
+
+		if (equality == SMJEqualityError)
+			return SMJEvaluatorEvaluateError;
+		
+		return SMBoolToEvaluateResult(equality == SMJEqualityDiffer);
 	}];
 	
 	
 	// Equals.
 	map[SMJRelationalOperatorEQ] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
-		return SMBoolToEvaluateResult([leftNode compare:rightNode] == SMJComparisonSame);
+		
+		SMJComparisonResult comparison = [leftNode compare:rightNode withError:error];
+		
+		if (comparison == SMJComparisonError)
+			return SMJEvaluatorEvaluateError;
+		
+		return SMBoolToEvaluateResult(comparison == SMJComparisonSame);
 	}];
 	
 	
 	// Type Safe Equals.
 	map[SMJRelationalOperatorTSEQ] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
-		return SMBoolToEvaluateResult([leftNode isEqual:rightNode]);
+		
+		SMJEqualityResult equality = [leftNode isEqual:rightNode withError:error];
+
+		if (equality == SMJEqualityError)
+			return SMJEvaluatorEvaluateError;
+		
+		return SMBoolToEvaluateResult(equality == SMJEqualitySame);
 	}];
 	
 	
 	// Less Than.
 	map[SMJRelationalOperatorLT] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
-		return SMBoolToEvaluateResult([leftNode compare:rightNode] == SMJComparisonDifferLessThan);
+		
+		SMJComparisonResult comparison = [leftNode compare:rightNode withError:error];
+		
+		if (comparison == SMJComparisonError)
+			return SMJEvaluatorEvaluateError;
+		
+		return SMBoolToEvaluateResult(comparison == SMJComparisonDifferLessThan);
 	}];
 	
 	
 	// Less Than Equals.
 	map[SMJRelationalOperatorLTE] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
 		
-		SMJComparisonResult result = [leftNode compare:rightNode];
+		SMJComparisonResult comparison = [leftNode compare:rightNode withError:error];
+
+		if (comparison == SMJComparisonError)
+			return SMJEvaluatorEvaluateError;
 		
-		return SMBoolToEvaluateResult(result == SMJComparisonSame || result == SMJComparisonDifferLessThan);
+		return SMBoolToEvaluateResult(comparison == SMJComparisonSame || comparison == SMJComparisonDifferLessThan);
 	}];
 	
 	
 	// Greater Than.
 	map[SMJRelationalOperatorGT] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
-		return SMBoolToEvaluateResult([leftNode compare:rightNode] == SMJComparisonDifferGreaterThan);
+		
+		SMJComparisonResult comparison = [leftNode compare:rightNode withError:error];
+
+		if (comparison == SMJComparisonError)
+			return SMJEvaluatorEvaluateError;
+		
+		return SMBoolToEvaluateResult(comparison == SMJComparisonDifferGreaterThan);
 	}];
 	
 	
 	// Greater Than Equals.
 	map[SMJRelationalOperatorGTE] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
 		
-		SMJComparisonResult result = [leftNode compare:rightNode];
+		SMJComparisonResult comparison = [leftNode compare:rightNode withError:error];
+
+		if (comparison == SMJComparisonError)
+			return SMJEvaluatorEvaluateError;
 		
-		return SMBoolToEvaluateResult(result == SMJComparisonSame || result == SMJComparisonDifferGreaterThan);
+		return SMBoolToEvaluateResult(comparison == SMJComparisonSame || comparison == SMJComparisonDifferGreaterThan);
 	}];
 	
 	
@@ -205,12 +252,12 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 		
 		if ([leftNode isKindOfClass:[SMJPatternNode class]] && ![rightNode isKindOfClass:[SMJPatternNode class]])
 		{
-			regexp = [(SMJPatternNode *)leftNode underlayingObjectWithError:nil];
+			regexp = [(SMJPatternNode *)leftNode underlayingObjectWithError:error];
 			string = [rightNode literalValue];
 		}
 		else if (![leftNode isKindOfClass:[SMJPatternNode class]] && [rightNode isKindOfClass:[SMJPatternNode class]])
 		{
-			regexp = [(SMJPatternNode *)rightNode underlayingObjectWithError:nil];
+			regexp = [(SMJPatternNode *)rightNode underlayingObjectWithError:error];
 			string = [leftNode literalValue];
 		}
 
@@ -262,13 +309,18 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 		if ([rightNode isKindOfClass:[SMJBooleanNode class]] == NO)
 			return SMJEvaluatorEvaluateFalse;
 
-		NSNumber	*isEmptyNumber = [(SMJBooleanNode *)rightNode underlayingObjectWithError:nil];
+		NSNumber	*isEmptyNumber = [(SMJBooleanNode *)rightNode underlayingObjectWithError:error];
 		BOOL		isEmpty = [isEmptyNumber boolValue];
 		
+		if (!isEmptyNumber)
+			return SMJEvaluatorEvaluateError;
 		
 		if ([leftNode isKindOfClass:[SMJStringNode class]])
 		{
-			NSString *string = [(SMJStringNode *)leftNode underlayingObjectWithError:nil];
+			NSString *string = [(SMJStringNode *)leftNode underlayingObjectWithError:error];
+			
+			if (!string)
+				return SMJEvaluatorEvaluateError;
 			
 			return SMBoolToEvaluateResult((string.length == 0) == isEmpty);
 		}
@@ -292,6 +344,7 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 	// In.
 	map[SMJRelationalOperatorIN] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
 		
+		// > Right.
 		if ([rightNode isKindOfClass:[SMJJsonNode class]] == NO)
 			return SMJEvaluatorEvaluateFalse;
 		
@@ -305,11 +358,13 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 		
 		NSArray *rightArray = rightObject;
 		
+		// > Left.
 		id leftObject = [leftNode underlayingObjectWithError:error];
 		
 		if (!leftObject)
 			return SMJEvaluatorEvaluateError;
 		
+		// > Compare.
 		return SMBoolToEvaluateResult([rightArray containsObject:leftObject]);
 	}];
 	
@@ -375,12 +430,14 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 	// Contains.
 	map[SMJRelationalOperatorCONTAINS] = [SMJEvaluatorGeneric evaluatorWithBlock:^SMJEvaluatorEvaluate(SMJValueNode *leftNode, SMJValueNode *rightNode, id<SMJPredicateContext> context, NSError **error) {
 		
-		if ([leftNode isKindOfClass:[SMJStringNode class]] &&   [rightNode isKindOfClass:[SMJStringNode class]])
+		if ([leftNode isKindOfClass:[SMJStringNode class]] && [rightNode isKindOfClass:[SMJStringNode class]])
 		{
-			NSString *leftString = [(SMJStringNode *)leftNode underlayingObjectWithError:nil];
-			NSString *rightString = [(SMJStringNode *)rightNode underlayingObjectWithError:nil];
-
+			NSString *leftString = [(SMJStringNode *)leftNode underlayingObjectWithError:error];
+			NSString *rightString = [(SMJStringNode *)rightNode underlayingObjectWithError:error];
 			
+			if (!leftString || !rightString)
+				return SMJEvaluatorEvaluateError;
+
 			NSRange range = [leftString rangeOfString:rightString];
 			
 			return SMBoolToEvaluateResult(range.location != NSNotFound);
@@ -427,8 +484,10 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 			id leftObject = [leftNode underlayingObjectWithError:error];
 			id rightObject = [rightNode underlayingObjectWithError:error];
 
-			if (leftObject && rightNode)
-				isSameType = ([rightObject isKindOfClass:leftObject] || [leftObject isKindOfClass:rightObject]);
+			if (!leftObject || !rightObject)
+				return SMJEvaluatorEvaluateError;
+			
+			isSameType = ([rightObject isKindOfClass:leftObject] || [leftObject isKindOfClass:rightObject]);
 		}
 		
 		// Check that left type name is equal to right string name.
@@ -436,8 +495,11 @@ typedef SMJEvaluatorEvaluate (^SMJEvaluatorGenericBlock)(SMJValueNode *leftNode,
 		{
 			if ([rightNode isKindOfClass:[SMJStringNode class]])
 			{
-				NSString *typeName = [(SMJStringNode *)rightNode underlayingObjectWithError:nil];
+				NSString *typeName = [(SMJStringNode *)rightNode underlayingObjectWithError:error];
 				
+				if (!typeName)
+					return SMJEvaluatorEvaluateError;
+
 				if ([[leftNode typeName] isEqualToString:typeName])
 					isSameType = YES;
 			}

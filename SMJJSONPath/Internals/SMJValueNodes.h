@@ -112,7 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (NSRegularExpression *)underlayingObjectWithError:(NSError **)error;
+- (nullable NSRegularExpression *)underlayingObjectWithError:(NSError **)error;
 
 @end
 

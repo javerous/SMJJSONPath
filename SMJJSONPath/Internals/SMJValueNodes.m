@@ -47,13 +47,6 @@ NS_ASSUME_NONNULL_BEGIN
 	} while (0) \
 
 
-/*
-** Prototypes
-*/
-#pragma mark - Prototypes
-
-static SMJComparisonResult convertComparison(NSComparisonResult result);
-
 
 /*
 ** Nodes - Private
@@ -346,28 +339,14 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 	return @"path";
 }
 
-- (BOOL)isEqual:(SMJPathNode *)node
-{
-	if ([node isKindOfClass:[SMJPathNode class]] == NO)
-		return NO;
-	
-	return [_pathString isEqual:node->_pathString];
-}
-
-- (SMJComparisonResult)compare:(SMJValueNode *)node
-{
-	if ([node isKindOfClass:[SMJPathNode class]] == NO)
-		return SMJComparisonDiffer;
-	
-	if ([_pathString isEqual:((SMJPathNode *)node)->_pathString])
-		return SMJComparisonSame;
-	else
-		return SMJComparisonDiffer;
-}
-
 - (id <SMJPath>)underlayingObjectWithError:(NSError **)error
 {
 	return _path;
+}
+
+- (nullable id)comparableUnderlayingObjectWithError:(NSError **)error
+{
+	return _pathString;
 }
 
 @end
@@ -387,18 +366,14 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 	return @"null";
 }
 
-- (BOOL)isEqual:(SMJNullNode *)node
+- (SMJEqualityResult)isEqual:(SMJValueNode *)node withError:(NSError **)error
 {
-	return ([node isKindOfClass:[SMJNullNode class]]);
-		return NO;
+	return ([node isKindOfClass:[SMJNullNode class]] ? SMJEqualitySame : SMJEqualityDiffer);
 }
 
-- (SMJComparisonResult)compare:(SMJValueNode *)node
+- (SMJComparisonResult)compare:(SMJValueNode *)node withError:(NSError **)error
 {
-	if ([node isKindOfClass:[SMJNullNode class]] == NO)
-		return SMJComparisonDiffer;
-	
-	return SMJComparisonSame;
+	return ([node isKindOfClass:[SMJNullNode class]] ? SMJComparisonSame : SMJComparisonDiffer);
 }
 
 - (NSNull *)underlayingObjectWithError:(NSError **)error
@@ -467,43 +442,6 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 	return @"json";
 }
 
-- (BOOL)isEqual:(SMJJsonNode *)node
-{
-	if ([node isKindOfClass:[SMJJsonNode class]] == NO)
-		return NO;
-	
-	id selfObject = [self underlayingObjectWithError:nil];
-	id nodeObject = [node underlayingObjectWithError:nil];
-	
-	if (!selfObject || !nodeObject)
-		return NO;
-	
-	return [selfObject isEqual:nodeObject];
-}
-
-- (SMJComparisonResult)compare:(SMJValueNode *)node
-{
-	if ([node isKindOfClass:[SMJJsonNode class]] == NO)
-		return SMJComparisonDiffer;
-	
-	id jsonObject1 = [self underlayingObjectWithError:nil];
-	id jsonObject2 = [node underlayingObjectWithError:nil];
-	
-	if ([jsonObject1 respondsToSelector:@selector(compare:)])
-	{
-		NSComparisonResult result = [(NSNumber *)jsonObject1 compare:jsonObject2]; // NSNumber is just to shut down clang++
-		
-		return convertComparison(result);
-	}
-	else
-	{
-		if ([jsonObject1 isEqual:jsonObject2])
-			return SMJComparisonSame;
-		else
-			return SMJComparisonDiffer;
-	}
-}
-
 - (nullable id)underlayingObjectWithError:(NSError **)error
 {
 	if (!_done)
@@ -513,6 +451,12 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 		_json = [NSJSONSerialization JSONObjectWithData:[_jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&lerror];
 		_error = lerror;
 		_done = YES;
+				
+		if (_json && [_json isKindOfClass:[NSDictionary class]] == NO && [_json isKindOfClass:[NSArray class]] == NO)
+		{
+			_json = nil;
+			_error = [NSError errorWithDomain:@"SMJValueNodesErrorNode" code:1 userInfo:@{ NSLocalizedDescriptionKey : @"Invalid JSON type" }];
+		}
 	}
 	
 	if (error)
@@ -531,7 +475,10 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 	NSString *_string;
 	NSString *_pattern;
 	NSString *_flags;
-	NSRegularExpression *_compiledPattern;
+	
+	BOOL				_done;
+	NSRegularExpression	*_compiledPattern;
+	NSError				*_error;
 }
 
 - (instancetype)initWithString:(NSString *)string
@@ -558,14 +505,8 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 		
 		// Extract flags.
 		NSInteger flagsIndex = end + 1;
-		NSRegularExpressionOptions options = 0;
 		
 		_flags = string.length > flagsIndex ? [string substringFromIndex:flagsIndex] : @"";
-				
-		options = [SMJPatternFlags parseFlags:_flags];
-		
-		// Compile pattern.
-		_compiledPattern = [NSRegularExpression regularExpressionWithPattern:_pattern options:options error:nil];
 	}
 	
 	return self;
@@ -581,31 +522,26 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 	return @"pattern";
 }
 
-- (BOOL)isEqual:(SMJPatternNode *)node
+- (nullable NSRegularExpression *)underlayingObjectWithError:(NSError **)error
 {
-	if ([node isKindOfClass:[SMJPatternNode class]] == NO)
-		return NO;
-	
-	return [_string isEqual:node->_string];
-}
+	if (!_done)
+	{
+		NSError *lerror = nil;
+		
+		_compiledPattern = [NSRegularExpression regularExpressionWithPattern:_pattern options:[SMJPatternFlags parseFlags:_flags] error:&lerror];
+		_error = lerror;
+		_done = YES;
+	}
 
-- (SMJComparisonResult)compare:(SMJValueNode *)node
-{
-	if ([node isKindOfClass:[SMJPatternNode class]] == NO)
-		return SMJComparisonDiffer;
+	if (error)
+		*error = _error;
 	
-	NSRegularExpression *regExp1 = [self underlayingObjectWithError:nil];
-	NSRegularExpression *regExp2 = [node underlayingObjectWithError:nil];
-	
-	if ([regExp1 isEqual:regExp2])
-		return SMJComparisonSame;
-	else
-		return SMJComparisonDiffer;
-}
-
-- (NSRegularExpression *)underlayingObjectWithError:(NSError **)error
-{
 	return _compiledPattern;
+}
+
+- (nullable id)comparableUnderlayingObjectWithError:(NSError **)error
+{
+	return _string;
 }
 
 @end
@@ -678,44 +614,6 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 	return @"string";
 }
 
-- (BOOL)isEqual:(SMJStringNode *)node
-{
-	if ([node isKindOfClass:[SMJStringNode class]] == NO)
-		return NO;
-	
-	return [_string isEqual:node->_string];
-}
-
-- (SMJComparisonResult)compare:(SMJValueNode *)node
-{
-	NSString *string1 = [self underlayingObjectWithError:nil];
-	
-	if ([node isKindOfClass:[SMJNumberNode class]])
-	{
-		NSNumber *number1 = [SMJUtils numberWithString:string1];
-		NSNumber *number2 = [(SMJNumberNode *)node underlayingObjectWithError:nil];
-		
-		if (number1)
-			return convertComparison([number1 compare:number2]);
-		else
-			return convertComparison([string1 compare:[number2 stringValue]]);
-	}
-	else if ([node isKindOfClass:[SMJStringNode class]])
-	{
-		NSNumber *number1 = [SMJUtils numberWithString:string1];
-		
-		NSString *string2 = [(SMJStringNode *)node underlayingObjectWithError:nil];
-		NSNumber *number2 = [SMJUtils numberWithString:string2];
-		
-		if (number1 && number2)
-			return convertComparison([number1 compare:number2]);
-		else
-			return convertComparison([string1 compare:string2]);
-	}
-	
-	return SMJComparisonDiffer;
-}
-
 - (NSString *)underlayingObjectWithError:(NSError **)error
 {
 	return _string;
@@ -771,38 +669,6 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 - (NSString *)typeName
 {
 	return @"number";
-}
-
-- (BOOL)isEqual:(SMJNumberNode *)node
-{
-	if ([node isKindOfClass:[SMJNumberNode class]] == NO)
-		return NO;
-	
-	return [_value isEqual:node->_value];
-}
-
-- (SMJComparisonResult)compare:(SMJValueNode *)node
-{
-	NSNumber *number1 = [(SMJNumberNode *)self underlayingObjectWithError:nil];
-	
-	if ([node isKindOfClass:[SMJNumberNode class]])
-	{
-		NSNumber *number2 = [(SMJNumberNode *)node underlayingObjectWithError:nil];
-		
-		return convertComparison([number1 compare:number2]);
-	}
-	else if ([node isKindOfClass:[SMJStringNode class]])
-	{
-		NSString *string2 = [(SMJStringNode *)node underlayingObjectWithError:nil];
-		NSNumber *number2 = [SMJUtils numberWithString:string2];
-		
-		if (number2)
-			return convertComparison([number1 compare:number2]);
-		else
-			return convertComparison([[number1 stringValue] compare:string2]);
-	}
-	
-	return SMJComparisonDiffer;
 }
 
 - (NSNumber *)underlayingObjectWithError:(NSError **)error
@@ -862,52 +728,12 @@ static SMJComparisonResult convertComparison(NSComparisonResult result);
 	return @"bool";
 }
 
-- (BOOL)isEqual:(SMJBooleanNode *)node
-{
-	if ([node isKindOfClass:[SMJBooleanNode class]] == NO)
-		return NO;
-	
-	return _value == node->_value;
-}
-
-- (SMJComparisonResult)compare:(SMJValueNode *)node
-{
-	NSNumber *bool1 = [self underlayingObjectWithError:nil];
-	NSNumber *bool2 = [node underlayingObjectWithError:nil];
-	
-	if (bool1.boolValue == bool2.boolValue)
-		return SMJComparisonSame;
-	else
-		return SMJComparisonDiffer;
-}
-
 - (NSNumber *)underlayingObjectWithError:(NSError **)error
 {
 	return @(_value);
 }
 
 @end
-
-
-/*
-** C-Tools
-*/
-#pragma mark - C Tools
-
-static SMJComparisonResult convertComparison(NSComparisonResult result)
-{
-	switch (result)
-	{
-		case NSOrderedAscending:
-			return SMJComparisonDifferLessThan;
-			
-		case NSOrderedSame:
-			return SMJComparisonSame;
-			
-		case NSOrderedDescending:
-			return SMJComparisonDifferGreaterThan;
-	}
-}
 
 
 NS_ASSUME_NONNULL_END
